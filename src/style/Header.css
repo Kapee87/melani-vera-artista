@@ -1,0 +1,52 @@
+.navBar {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding-right: 6vw;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8em;
+    position: fixed;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.navBar nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 75%;
+}
+
+.navBar ul {
+    padding: .3rem;
+    display: flex;
+    gap: 6vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.glass {
+    background-color: #fffaf63a;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.navBar nav img {
+    height: 4rem;
+    border-radius: 50px;
+}
+
+.navBar ul li {
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.navBar ul li:hover {
+    transition: all 2s;
+    background-color: rgba(171, 224, 206, 0.124);
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(6, 10, 9, 0.877) 1px 3px 5px;
+    text-shadow: rgba(6, 10, 9, 0.877) 1px 3px 5px;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.deco1 {
+    width: 35rem;
+    height: 30rem;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    margin-top: -10rem;
+    margin-left: -10rem;
+}
+
+main {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionName {
+    position: absolute;
+    top: 15vh;
+    left: 2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 4rem;
+}

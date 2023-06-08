@@ -1,0 +1,80 @@
+
+:root,
+html[data-theme='light'] {
+  --rem: 12pt;
+  --width: 50rem;
+  --navpos: absolute;
+  /* fixed | absolute */
+  --font-p: 1em/1.7 'Angelina Rachmi', 'Open Sans', 'DejaVu Sans', FreeSans, Helvetica, sans-serif;
+  --font-h: .9em/1.5 'Allura', cursive;
+  --font-c: .9em/1.4 'DejaVu Sans Mono', monospace;
+  --border: 1px solid var(--cmed);
+  --ornament: "‹‹‹ ›››";
+  /* foreground   | background color */
+  --cfg: #433;
+  --cbg: #d4d2c2;
+  --cdark: #888;
+  --clight: #dfe0e1;
+  --cmed: #d1d1d1;
+  --clink: #07c;
+  --cemph: #088;
+  --cemphbg: #0881;
+}
+
+
+/* 2. Reset –––––––––––––––––––––––––––––––––––––––––––– */
+
+/* reset block elements  */
+* {
+  box-sizing: border-box;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer,
+figure,
+table,
+video,
+details,
+blockquote,
+ul,
+ol,
+dl,
+fieldset,
+pre,
+pre>code,
+caption {
+  display: block;
+  margin: 0.5rem 0rem 1rem;
+  width: 100%;
+  overflow: auto hidden;
+  text-align: left;
+}
+
+video,
+summary,
+input,
+select {
+  outline: none;
+}
+
+/* reset clickable things  (FF Bug: select:hover prevents usage) */
+a,
+button,
+select,
+summary {
+  text-decoration: none;
+  color: rgb(35, 33, 33);
+  cursor: pointer;
+}
+
+/* Custom Style */
+body {
+  background-color: #fffaf6;
+}
+
+nav ul li {
+  list-style-type: none;
+}

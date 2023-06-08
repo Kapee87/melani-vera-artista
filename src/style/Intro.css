@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.introContainer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/fondo.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.introContainer h1 {
+    font-family: 'Allura';
+    font-size: 4em;
+}
+
+.introContainer h4 {
+    font-size: 1em;
+}
+
+.introContainer h1,
+.introContainer h4 {
+    animation: landing 5s ease-in-out;
+}
+
+
+.introContainer p::after {
+    font-size: .8rem;
+    font-family: 'Courier New', Courier, monospace;
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50vw;
+    opacity: .6;
+    animation: countdown 5s;
+}
+
+@keyframes landing {
+    0% {
+        transform: scale(.5);
+    }
+
+    50% {
+        transform: scale(1.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes countdown {
+    10% {
+        content: '';
+    }
+
+    20% {
+        content: 'Ingresando en 5s..';
+    }
+
+    30% {
+        content: '';
+    }
+
+    40% {
+        content: 'Ingresando en 4s..';
+    }
+
+    50% {
+        content: '';
+    }
+
+    60% {
+        content: 'Ingresando en 3s..';
+    }
+
+    70% {
+        content: '';
+    }
+
+    80% {
+        content: 'Ingresando en 2s..';
+    }
+
+    90% {
+        content: '';
+    }
+
+    100% {
+        content: 'Ingresando en 1s..';
+    }
+
+}
+
+@media screen and (max-width:540px) {
+    .introContainer {
+        background-size: auto;
+        background-position: center;
+        font-size: 5px;
+    }
+
+}
