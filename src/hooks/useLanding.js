@@ -1,15 +1,16 @@
-
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 export function useLanding() {
-    const landingRef = useRef(true)
-    const [landingSt, setLandingSt] = useState(landingRef)
+    const isLanding = sessionStorage.getItem('landing') ? false : true
+    const [landingSt, setLandingSt] = useState(isLanding)
 
     useEffect(() => {
         const landingTimeOut = setTimeout(() => {
-            landingRef.current = false
-            setLandingSt(landingRef.current)
-            clearTimeout(landingTimeOut)
+            if (isLanding) {
+                sessionStorage.setItem('landing', false)
+                setLandingSt(sessionStorage.getItem('landing') ? false : true)
+                clearTimeout(landingTimeOut)
+            }
         }, 5000);
     }, [])
 

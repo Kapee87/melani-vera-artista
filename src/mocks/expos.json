@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Figuraciones",
+        "fecha": "01-04-2023",
+        "descripcion": "Daremos inauguración hoy, sábado 4, a las 15hs, y luego se podrá visitar de miércoles a sábados, de 15hs a 18hs, hasta el 1/4. Espacio Expositivo Carabela, Santa Teresita. ¡L@s esperamos!",
+        "urlImagen": "https://scontent.faep24-1.fna.fbcdn.net/v/t39.30808-6/330574709_1644962075941383_5466242158088931245_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGM1htd1JWKD8B0ZZwQnfIW78LQQFTdDGfvwtBAVN0MZ0TrdwRdRrOZ97pfcUF96io&_nc_ohc=41Qx-UZhL-EAX_wMVEl&_nc_ht=scontent.faep24-1.fna&oh=00_AfDfW76141w174Z6LAIpa8An6NbNcSYnB0pghBz8IeXYfQ&oe=64908619",
+        "urlExpo": "expo1.com"
+    },
+    {
+        "nombre": "lalal2",
+        "fecha": "16-10-2023",
+        "descripcion": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+        "urlImagen": "www.foto.com/expo2",
+        "urlExpo": "expo2.com"
+    },
+    {
+        "nombre": "lalal3",
+        "fecha": "16-10-2023",
+        "descripcion": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+        "urlImagen": "www.foto.com/expo3",
+        "urlExpo": "expo3.com"
+    },
+    {
+        "nombre": "lalal4",
+        "fecha": "16-10-2023",
+        "descripcion": "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+        "urlImagen": "www.foto.com/expo4",
+        "urlExpo": "expo4.com"
+    }
+]
