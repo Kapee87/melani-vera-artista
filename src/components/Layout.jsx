@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 import { Header } from "./Header"
 import deco1 from '../assets/decorator1.png'
 import deco4 from '../assets/deco4.png'
-import '../style/Layout.css'
+import '../style/layout.css'
 import { usePath } from "../hooks/usePath";
 
 

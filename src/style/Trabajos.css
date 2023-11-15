@@ -26,8 +26,16 @@
     transform: scale(1.1);
     filter: blur(2px);
 }
-.gridContainer ul li a img{
+
+.gridContainer ul li a img {
     object-fit: contain;
     width: 100%;
-    
+}
+
+.userControls {
+    display: flex;
+    justify-content: end;
+    padding-right: 1rem;
+    font-size: 1.9rem;
+    filter: hue-rotate(300deg);
 }
