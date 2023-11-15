@@ -33,7 +33,7 @@ export default function Router() {
         }
         token
             ? loadaxios()
-            : ''
+            : setUserData(null)
         // console.log(userData);
     }, [])
 
