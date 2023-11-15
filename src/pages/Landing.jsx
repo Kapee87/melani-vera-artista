@@ -3,7 +3,6 @@ import Router from "../components/Router.jsx";
 import { UserContextProvider } from "../context/userContext.jsx";
 import { useLanding } from "../hooks/useLanding.js"
 
-
 export function Landing() {
     const { landingSt } = useLanding()
 
