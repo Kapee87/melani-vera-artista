@@ -7,7 +7,6 @@ import Toastify from 'toastify-js'
 import '../style/trabajos.css'
 import { UserContext } from '../context/userContext'
 
-
 export function Trabajos() {
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])
