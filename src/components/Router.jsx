@@ -9,7 +9,7 @@ import { Layout } from './Layout.jsx'
 import axios from 'axios'
 import AdminDashboard from '../pages/AdminDashboard.jsx'
 import NewWork from '../pages/new entries forms/NewWork.jsx'
-import NewExpo from '../pages/new entries forms/newExpo.jsx'
+import NewExpo from '../pages/new entries forms/NewExpo.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
 
 
