@@ -1,5 +1,5 @@
 import { Suspense, useContext, useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Contacto } from '../pages/Contacto.jsx'
 import { Expos } from '../pages/Expos.jsx'
 import SignIn from '../pages/SignIn.jsx'
@@ -50,7 +50,7 @@ export default function Router() {
 
     return (
         <Suspense fallback={<h3>Cargando...</h3>}>
-            <BrowserRouter>
+            <HashRouter>
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         **<Route index element={<Trabajos />} />**
@@ -64,7 +64,7 @@ export default function Router() {
                     <Route path='/signin' element={<SignIn />} />
                     <Route path='/admin' element={<AdminDashboard />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </Suspense >
     )
 }
