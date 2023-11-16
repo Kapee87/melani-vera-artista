@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import '../style/Header.css'
 import icon from '../assets/sessionIcon.png'
 import { useScroll } from "../hooks/useScroll";
@@ -49,7 +49,7 @@ export function Header() {
                         {
                             userData?.online
                                 ? <img src={userData.profileImage} alt="Foto de Mélani Vera" onMouseEnter={() => setPopup(true)} />
-                                : <a href="/signin"  ><img src={icon} alt="" onMouseEnter={() => setPopup(true)} />  </a>
+                                : <NavLink href="/signin"  ><img src={icon} alt="" onMouseEnter={() => setPopup(true)} />  </NavLink>
 
                         }
                     </div>
@@ -59,12 +59,12 @@ export function Header() {
             {
                 popup && userData?.online ? (
                     <div className="signin-modal-cerrar" onMouseLeave={() => setPopup(false)}>
-                        <a href="/admin">Editar 🖌️</a>
+                        <NavLink href="/admin">Editar 🖌️</NavLink>
                         <button onClick={handleSignout}>Cerrar sesión</button>
                     </div>
                 )
                     : popup && <div className="signin-modal-iniciar" onMouseLeave={() => setPopup(false)}>
-                        <a href="/signin" >Iniciar sesión</a>
+                        <NavLink href="/signin" >Iniciar sesión</NavLink>
                     </div>
             }
         </>
