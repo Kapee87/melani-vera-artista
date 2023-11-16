@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import '../style/header.css'
 import icon from '../assets/sessionIcon.png'
 import { useScroll } from "../hooks/useScroll";
+
+import { useContext, useState } from "react";
 import { UserContext } from "../context/userContext";
-import { useContext, useEffect, useState } from "react";
 
 
 export function Header() {

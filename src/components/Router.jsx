@@ -1,6 +1,5 @@
 import { Suspense, useContext, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { UserContext } from '../context/userContext.jsx'
 import { Contacto } from '../pages/Contacto.jsx'
 import { Expos } from '../pages/Expos.jsx'
 import SignIn from '../pages/SignIn.jsx'
@@ -11,6 +10,7 @@ import axios from 'axios'
 import AdminDashboard from '../pages/AdminDashboard.jsx'
 import NewWork from '../pages/new entries forms/NewWork.jsx'
 import NewExpo from '../pages/new entries forms/newExpo.jsx'
+import { UserContext } from '../context/userContext.jsx'
 
 
 export default function Router() {
