@@ -5,7 +5,8 @@ import smile from '../assets/smile.png'
 import imgDefault from '../assets/imgDefault.jpg'
 import Toastify from 'toastify-js'
 import '../style/trabajos.css'
-import { UserContext } from '../context/userContext'
+import { UserContext } from '../context/UserContextB'
+
 
 export function Trabajos() {
     const [showModal, setShowModal] = useState(false)
