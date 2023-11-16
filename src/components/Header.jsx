@@ -49,7 +49,7 @@ export function Header() {
                         {
                             userData?.online
                                 ? <img src={userData.profileImage} alt="Foto de Mélani Vera" onMouseEnter={() => setPopup(true)} />
-                                : <NavLink href="/signin"  ><img src={icon} alt="" onMouseEnter={() => setPopup(true)} />  </NavLink>
+                                : <NavLink to="/signin"  ><img src={icon} alt="" onMouseEnter={() => setPopup(true)} />  </NavLink>
 
                         }
                     </div>
@@ -59,12 +59,12 @@ export function Header() {
             {
                 popup && userData?.online ? (
                     <div className="signin-modal-cerrar" onMouseLeave={() => setPopup(false)}>
-                        <NavLink href="/admin">Editar 🖌️</NavLink>
+                        <NavLink to="/admin">Editar 🖌️</NavLink>
                         <button onClick={handleSignout}>Cerrar sesión</button>
                     </div>
                 )
                     : popup && <div className="signin-modal-iniciar" onMouseLeave={() => setPopup(false)}>
-                        <NavLink href="/signin" >Iniciar sesión</NavLink>
+                        <NavLink to="/signin" >Iniciar sesión</NavLink>
                     </div>
             }
         </>
