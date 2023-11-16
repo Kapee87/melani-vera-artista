@@ -4,7 +4,7 @@ import DeleteModal from '../components/microcomponents/DeletModal'
 import smile from '../assets/smile.png'
 import imgDefault from '../assets/imgDefault.jpg'
 import Toastify from 'toastify-js'
-import '../style/trabajos.css'
+import '../style/Trabajos.css'
 import { UserContext } from '../context/UserContextB'
 
 
