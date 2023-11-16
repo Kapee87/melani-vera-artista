@@ -57,7 +57,7 @@ export function Header() {
             {
                 popup && userData?.online ? (
                     <div className="signin-modal-cerrar" onMouseLeave={() => setPopup(false)}>
-                        <a href="/profileEdit">Editar 🖌️</a>
+                        <a href="/admin">Editar 🖌️</a>
                         <button onClick={handleSignout}>Cerrar sesión</button>
                     </div>
                 )

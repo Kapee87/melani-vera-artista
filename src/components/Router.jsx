@@ -8,6 +8,9 @@ import { SobreMi } from '../pages/SobreMi.jsx'
 import { Trabajos } from '../pages/Trabajos.jsx'
 import { Layout } from './Layout.jsx'
 import axios from 'axios'
+import AdminDashboard from '../pages/AdminDashboard.jsx'
+import NewWork from '../pages/new entries forms/NewWork.jsx'
+import NewExpo from '../pages/new entries forms/newExpo.jsx'
 
 
 export default function Router() {
@@ -29,6 +32,7 @@ export default function Router() {
             } catch (error) {
                 console.log(error)
                 sessionStorage.removeItem('token')
+                setUserData(null)
             }
         }
         token
@@ -53,8 +57,11 @@ export default function Router() {
                         <Route path='exposiciones' element={<Expos />} />
                         <Route path='contacto' element={<Contacto />} />
                         <Route path='sobre-mi' element={<SobreMi />} />
+                        <Route path='nuevo-trabajo' element={<NewWork />} />
+                        <Route path='nueva-exposicion' element={<NewExpo />} />
                     </Route>
                     <Route path='/signin' element={<SignIn />} />
+                    <Route path='/admin' element={<AdminDashboard />} />
                 </Routes>
             </BrowserRouter>
         </Suspense >

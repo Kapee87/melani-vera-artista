@@ -4,7 +4,7 @@ import { UserContext } from "../context/userContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import Toastify from 'toastify-js'
-import "toastify-js/src/toastify.css"
+
 import { useIsLogged } from "../hooks/useIslogged"
 
 

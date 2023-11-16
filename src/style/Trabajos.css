@@ -9,6 +9,7 @@
 }
 
 .gridContainer ul li {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,9 +34,43 @@
 }
 
 .userControls {
+    filter: hue-rotate(300deg);
+}
+
+.userControls a {
     display: flex;
     justify-content: end;
     padding-right: 1rem;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.9rem;
-    filter: hue-rotate(300deg);
+}
+
+.userControls a span {
+    font-size: 1.3rem;
+}
+
+.eraseBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    position: absolute;
+    top: .5rem;
+    right: .6rem;
+    opacity: .7;
+    transition: all 1s;
+}
+
+.eraseBtn:hover {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.eraseBtn img{
+    width: 2rem;
+    transition: all .5s;
+}
+.eraseBtn img:hover{
+    transform: scale(1.3);
+    transition: all .5s;
 }
