@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../style/header.css'
+import '../style/Header.css'
 import icon from '../assets/sessionIcon.png'
 import { useScroll } from "../hooks/useScroll";
 
