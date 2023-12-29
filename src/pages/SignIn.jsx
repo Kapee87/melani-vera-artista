@@ -8,17 +8,16 @@ import { UserContext } from "../context/UserContextB"
 
 
 function SignIn() {
-    const { userData, setUserData } = useContext(UserContext)
+    const { userData, setUserData, token } = useContext(UserContext)
     const [isLoading, setIsLoading] = useState(false)
     const [errorSignIn, setErrorSignIn] = useState([])
-    const isLogged = useIsLogged()
     const navigate = useNavigate()
     const formFields = {
         email: useRef(null),
         password: useRef(null),
     };
     useEffect(() => {
-        isLogged ? navigate('/') : setUserData(null)
+        token ? navigate('/') : setUserData(null)
     }, [])
 
 
@@ -34,7 +33,8 @@ function SignIn() {
 
         if (isFormValid() == 0) {
             try {
-                const tempUserData = await axios.post('https://melvera-api.onrender.com/api/auth/signin', formData)
+                
+                const tempUserData = await axios.post('https://melvera-api-c6l8.onrender.com/api/auth/signin', formData)
 
                 setUserData({ ...tempUserData.data.response.user, 'online': true })
 

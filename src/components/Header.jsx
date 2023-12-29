@@ -8,12 +8,14 @@ import { UserContext } from "../context/UserContextB";
 
 
 
+
 export function Header() {
     const { isScrolled } = useScroll()
-    const { userData, setUserData } = useContext(UserContext)
+    const { userData, setUserData, token, setToken } = useContext(UserContext)
     const [popup, setPopup] = useState(false)
     const handleSignout = () => {
         setUserData(null)
+        setToken(null)
         sessionStorage.removeItem('token')
         setPopup(false)
     }

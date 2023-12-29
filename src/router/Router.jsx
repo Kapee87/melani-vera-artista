@@ -5,12 +5,13 @@ import { Expos } from '../pages/Expos.jsx'
 import SignIn from '../pages/SignIn.jsx'
 import { SobreMi } from '../pages/SobreMi.jsx'
 import { Trabajos } from '../pages/Trabajos.jsx'
-import { Layout } from './Layout.jsx'
+import { Layout } from '../components/Layout.jsx'
 import axios from 'axios'
 import AdminDashboard from '../pages/AdminDashboard.jsx'
 import NewWork from '../pages/new entries forms/NewWork.jsx'
 import NewExpo from '../pages/new entries forms/NewExpo.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
+import ProtectedRoute from './ProtectedRoute.jsx'
 
 
 
@@ -21,7 +22,7 @@ export default function Router() {
     useEffect(() => {
         async function loadaxios() {
             try {
-                const { data } = await axios.post('https://melvera-api.onrender.com/api/auth/token', {}, {
+                const { data } = await axios.post('https://melvera-api-c6l8.onrender.com/api/auth/token', {}, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -58,11 +59,11 @@ export default function Router() {
                         <Route path='exposiciones' element={<Expos />} />
                         <Route path='contacto' element={<Contacto />} />
                         <Route path='sobre-mi' element={<SobreMi />} />
-                        <Route path='nuevo-trabajo' element={<NewWork />} />
-                        <Route path='nueva-exposicion' element={<NewExpo />} />
+                        <Route path='nuevo-trabajo' element={<ProtectedRoute component={NewWork} />} />
+                        <Route path='nueva-exposicion' element={<ProtectedRoute component={NewExpo} />} />
+                        <Route path='/admin' element={<ProtectedRoute component={AdminDashboard} />} />
                     </Route>
                     <Route path='/signin' element={<SignIn />} />
-                    <Route path='/admin' element={<AdminDashboard />} />
                 </Routes>
             </BrowserRouter>
         </Suspense >

@@ -15,7 +15,7 @@ export function Trabajos() {
 
     useEffect(() => {
         try {
-            fetch('https://melvera-api.onrender.com/api/works')
+            fetch('https://melvera-api-c6l8.onrender.com/api/works')
                 .then(res => res.json())
                 .then(data => setImgs(data.getWorks))
         } catch (error) {
@@ -38,15 +38,15 @@ export function Trabajos() {
             onClick: function () { } // Callback after click
         }).showToast();
     }
-    useEffect(() => {
-        console.log(showModal);
-    }, [])
+    // useEffect(() => {
+    //     console.log(showModal);
+    // }, [])
     return (
         <>
             <section className="trabajos">
                 {
-                    userData && <div className='userControls'>
-                        <NavLink to={'/nuevo-trabajo'}><span>Nuevo trabajo</span> ➕</NavLink>
+                    userData && <div className='flex justify-end userControls '>
+                        <NavLink to={'/nuevo-trabajo'} className={'flex justify-end'} ><span>Nuevo trabajo</span> ➕</NavLink>
                     </div>
                 }
                 <div className="gridContainer">

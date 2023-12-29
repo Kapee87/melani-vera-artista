@@ -1,8 +1,11 @@
 import React from 'react'
 
 function NewWork() {
+  
   return (
-    <div>NewWork</div>
+    <div>
+
+    </div>
   )
 }
 

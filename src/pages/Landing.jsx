@@ -1,5 +1,5 @@
 import { Intro } from "../components/Intro.jsx"
-import Router from "../components/Router.jsx";
+import Router from "../router/Router.jsx";
 import { UserContextProvider } from "../context/UserContextB.jsx";
 
 
