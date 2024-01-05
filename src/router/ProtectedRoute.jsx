@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useIsLogged } from '../hooks/useIslogged'
 import '../style/ProtectedRoutes.css'
-import { Route } from 'react-router-dom'
 
 const Checkeando = () => {
     return (
@@ -11,25 +10,22 @@ const Checkeando = () => {
 
 
 
-function ProtectedRoute({ children }) {
+function ProtectedRoute({ component: Component }) {
     const [isChecking, setIsChecking] = useState(false)
     const { isLogged } = useIsLogged()
 
     useEffect(() => {
         setIsChecking(true)
-        const checkLogged = async () => {
-            await isLogged()
-        }
-        checkLogged()
+        isLogged()
         setIsChecking(false)
     }, [])
-
+    
     return (
         <>
             {
                 isChecking
                     ? <Checkeando />
-                    : children
+                    : <Component />
             }
 
         </>

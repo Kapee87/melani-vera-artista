@@ -46,11 +46,11 @@ export function Trabajos() {
             <section className="trabajos">
                 {
                     userData && <div className='flex justify-end userControls '>
-                        <NavLink to={'/nuevo-trabajo'} className={'flex justify-end'} ><span>Nuevo trabajo</span> ➕</NavLink>
+                        <NavLink to={'/crear-trabajo'} className={'flex justify-end'} ><span>Nuevo trabajo</span> ➕</NavLink>
                     </div>
                 }
                 <div className="gridContainer">
-                    <ul>
+                    <ul >
                         {
                             imgs?.map(image => {
                                 return (
@@ -60,7 +60,7 @@ export function Trabajos() {
                                         </Link>
                                         {
                                             userData &&
-                                            <button className='eraseBtn' onClick={() => setShowModal(true)}>
+                                            <button className='eraseBtn z-[100]' onClick={() => setShowModal(true)}>
                                                 <img src={smile} alt="botón bote de basura para eliminar el item" />
                                             </button>
 

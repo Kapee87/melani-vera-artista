@@ -12,6 +12,7 @@ import NewWork from '../pages/new entries forms/NewWork.jsx'
 import NewExpo from '../pages/new entries forms/NewExpo.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
+import { urlToken } from '../utils/urlStore.js'
 
 
 
@@ -22,7 +23,7 @@ export default function Router() {
     useEffect(() => {
         async function loadaxios() {
             try {
-                const { data } = await axios.post('https://melvera-api-c6l8.onrender.com/api/auth/token', {}, {
+                const { data } = await axios.post(urlToken, {}, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -59,7 +60,7 @@ export default function Router() {
                         <Route path='exposiciones' element={<Expos />} />
                         <Route path='contacto' element={<Contacto />} />
                         <Route path='sobre-mi' element={<SobreMi />} />
-                        <Route path='nuevo-trabajo' element={<ProtectedRoute component={NewWork} />} />
+                        <Route path='crear-trabajo' element={<ProtectedRoute component={NewWork} />} />
                         <Route path='nueva-exposicion' element={<ProtectedRoute component={NewExpo} />} />
                         <Route path='/admin' element={<ProtectedRoute component={AdminDashboard} />} />
                     </Route>

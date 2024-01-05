@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    
     font-size: xx-large;
     text-shadow: #e4f3e6 1px 1px 3px;
 }

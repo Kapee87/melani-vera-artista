@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 
 :root,
 html[data-theme='light'] {
@@ -25,11 +31,13 @@ html[data-theme='light'] {
 /* 2. Reset –––––––––––––––––––––––––––––––––––––––––––– */
 
 /* reset block elements  */
-*, html {
+*,
+html {
   box-sizing: border-box;
   border-spacing: 0;
   margin: 0;
   padding: 0;
+  z-index: -1;
 }
 
 
@@ -82,4 +90,9 @@ body {
 
 nav ul li {
   list-style-type: none;
+}
+
+
+.caveat {
+  font-family: 'Caveat', cursive;
 }

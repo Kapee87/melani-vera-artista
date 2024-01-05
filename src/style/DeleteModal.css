@@ -1,4 +1,4 @@
-.modal-overlay {
+/* .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,9 +16,9 @@
     background: #caebda;
     box-shadow: 7px 7px 26px #bebebe,
         -7px -7px 26px #ffffff;
+    z-index: 200;
 }
 
-/* Botones del modal */
 .modal button {
     margin-top: 1rem;
     margin-right: 10px;
@@ -36,4 +36,4 @@
 .modal .cancel {
     color: green;
     box-shadow: green 1px 1px 3px;
-}
+} */

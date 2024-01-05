@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
     gap: 1rem;
+    
 }
 
 .gridContainer ul li {
@@ -20,6 +21,7 @@
     background: #111;
     color: #fff;
     padding: 1rem;
+    z-index: 50;
 }
 
 .gridContainer ul li a:hover {

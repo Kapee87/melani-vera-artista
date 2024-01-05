@@ -3,8 +3,8 @@ import '../style/signin.css'
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import Toastify from 'toastify-js'
-import { useIsLogged } from "../hooks/useIslogged"
 import { UserContext } from "../context/UserContextB"
+import { urlSignIn } from "../utils/urlStore"
 
 
 function SignIn() {
@@ -33,8 +33,8 @@ function SignIn() {
 
         if (isFormValid() == 0) {
             try {
-                
-                const tempUserData = await axios.post('https://melvera-api-c6l8.onrender.com/api/auth/signin', formData)
+
+                const tempUserData = await axios.post(urlSignIn, formData)
 
                 setUserData({ ...tempUserData.data.response.user, 'online': true })
 
@@ -54,7 +54,7 @@ function SignIn() {
                 timeOut = setTimeout(() => {
                     sessionStorage.setItem('token', tempUserData.data.response.token)
                     clearTimeout(timeOut)
-                    navigate('/')
+                    navigate('/', { replace: true })
                 }, 2000)
 
             } catch (error) {
@@ -116,7 +116,7 @@ function SignIn() {
         <section className="singin">
             {
                 !isLoading & !userData ?
-                    <form action="" className="signin-form" onSubmit={handleSubmit}>
+                    <form action="" className="signin-form z-50" onSubmit={handleSubmit}>
                         <h2>Iniciar sesión</h2>
 
                         <input type="text" placeholder="usuario@unmail.com" ref={formFields.email} />

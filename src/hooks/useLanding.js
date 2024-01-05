@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { UserContext } from "../context/UserContextB"
 
 export function useLanding() {
     const isLanding = sessionStorage.getItem('landing') ? false : true
     const [landingSt, setLandingSt] = useState(isLanding)
+    const { setToken } = useContext(UserContext)
 
     useEffect(() => {
         const landingTimeOut = setTimeout(() => {
@@ -12,6 +14,7 @@ export function useLanding() {
                 clearTimeout(landingTimeOut)
             }
         }, 5000);
+        setToken(sessionStorage.getItem('token'))
     }, [])
 
     return { landingSt }
