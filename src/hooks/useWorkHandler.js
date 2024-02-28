@@ -4,6 +4,7 @@ import { UserContext } from "../context/UserContextB";
 import { urlWorks } from "../utils/urlStore";
 import Toastify from 'toastify-js'
 import { useNavigate } from "react-router-dom";
+import { deleteFile, getStorageRefFromUrl } from "../components/firebase/config";
 
 export function useWorkHandler() {
     const navigate = useNavigate()
@@ -55,8 +56,46 @@ export function useWorkHandler() {
                 onClick: function () { } // Callback after click
             }).showToast();
         }
-
     }
 
-    return { postNewWork, token }
+    const deleteImgFirebase = async (imgUrl) => {
+        try {
+            //ref search for the img on firebase storage
+            const imageRefToDelete = await getStorageRefFromUrl(imgUrl)
+            console.log(imageRefToDelete);
+            try {
+                const imagedeletionResult = await deleteFile(imageRefToDelete)
+            } catch (error) {
+                console.log(error);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const deleteWork = async (imgUrl, workId) => {
+        if (!token) {
+            console.log("no hay token");
+            return navigate('/', { replace: true })
+        }
+        try {
+            deleteImgFirebase(imgUrl)
+        } catch (error) {
+            console.log(error)
+        }
+        console.log(token);
+        try {
+            const deletedwork = await axios.delete(`${urlWorks}/${workId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            console.log(deletedwork);
+            return "deleted"
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+    return { postNewWork, token, deleteWork }
 }

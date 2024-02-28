@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
+import { deleteObject, getDownloadURL, getMetadata, getStorage, ref, uploadBytes } from 'firebase/storage'
 import { v4 } from "uuid";
 
 const firebaseConfig = {
@@ -29,10 +29,25 @@ export async function uploadFile(file, folder) {
   const url = await getDownloadURL(storageRef);
   return url;
 }
+export async function getStorageRefFromUrl(url) {
 
+
+  const imageRef = ref(storage, url);
+
+  try {
+    // Verificar si la referencia existe
+    const metadata = await getMetadata(imageRef);
+    // Si la referencia existe, retornarla
+    return imageRef;
+  } catch (error) {
+    // Manejar el error si la referencia no existe
+    console.error('La referencia no existe:', error);
+    return null;
+  }
+}
 export async function deleteFile(urlsToDelete) {
 
-  urlsToDelete.forEach(async (file) => {
+  /* urlsToDelete.forEach(async (file) => {
     const fileRef = ref(storage, file)
     const fileName = fileRef.name
     try {
@@ -42,9 +57,6 @@ export async function deleteFile(urlsToDelete) {
       console.log(error);
     }
     console.log(fileRef);
-
-
-
-  });
+  }); */
 
 }

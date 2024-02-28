@@ -14,7 +14,7 @@ export function Layout() {
             <main className="w-full min-h-screen pt-64 flex flex-col items-center justify-center">
                 <h2
                     className="caveat absolute z-20 text-2xl text-black top-0 bg-[#CAEBDA] w-full md:w-36 flex justify-center py-3
-                                md:left-10 md:top-[8vh] md:text-7xl md:bg-none md:bg-transparent ">
+                                md:left-14 md:top-[8vh] md:text-6xl md:bg-none md:bg-transparent">
                     {title}
                 </h2>
                 <img src={deco1} alt="Decorador de layout" className="fixed z-10 top-0 hidden

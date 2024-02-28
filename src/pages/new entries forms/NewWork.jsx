@@ -32,6 +32,7 @@ function NewWork() {
   const handleOnChange = (e) => {
     e.preventDefault()
     const file = e.target.files[0];
+    console.log(file);
     setImageToSend(file)
     if (file) {
       // Verificar si el archivo es una imagen

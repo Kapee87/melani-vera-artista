@@ -56,7 +56,7 @@ export function Header() {
                                     {
                                         userData?.online ? (
                                             <div className="flex flex-col justify-center items-center">
-                                                <NavLink to="/admin" onClick={handleNavClick}>Editar 🖌️</NavLink>
+                                                <NavLink to="/admin" onClick={handleNavClick} >Editar 🖌️</NavLink>
                                                 <div onClick={handleSignout} className="text-black border-t-2 hover:cursor-pointer z-50" >Cerrar sesión 🔐 </div>
                                                 <NavLink to={'/admin'} className="avatar" onClick={handleNavClick}>
                                                     <div className="w-24 rounded-full">
@@ -115,8 +115,8 @@ export function Header() {
                                         {
                                             userData?.online ? (
                                                 <div className="flex flex-col justify-center items-center">
-                                                    <NavLink to="/admin">Editar 🖌️</NavLink>
-                                                    <div onClick={handleSignout} className="border-t-2 hover:cursor-pointer" >Cerrar sesión 🔐 </div>
+                                                    <NavLink to="/admin" className={`cursor-pointer z-0`}>Editar 🖌️</NavLink>
+                                                    <div onClick={handleSignout} className="border-t-2 cursor-pointer z-0" >Cerrar sesión 🔐 </div>
                                                     <div className="avatar">
                                                         <div className="w-24 rounded-full">
                                                             {

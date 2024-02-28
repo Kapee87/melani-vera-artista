@@ -5,9 +5,7 @@ import toastify from "toastify-js"
 
 export function useIsLogged() {
     const { token } = useContext(UserContext)
-    
     const navigate = useNavigate()
-
     const isLogged = () => {
         // console.log(token, sessionStorage.getItem('token'));
         if (!token && !sessionStorage.getItem('token')) {
@@ -30,9 +28,7 @@ export function useIsLogged() {
         } else {
             return true
         }
-
     }
-
     return { isLogged }
 
 }
