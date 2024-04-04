@@ -5,6 +5,7 @@ import axios from "axios"
 import Toastify from 'toastify-js'
 import { UserContext } from "../context/UserContextB"
 import { urlSignIn } from "../utils/urlStore"
+import Loader from "../components/microcomponents/Loader"
 
 
 function SignIn() {
@@ -135,7 +136,7 @@ function SignIn() {
                         </ul>
 
                     </form>
-                    : <p className="loading">Cargando..</p>
+                    : <Loader />
             }
         </section>
     )

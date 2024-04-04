@@ -7,9 +7,11 @@ import Toastify from 'toastify-js'
 import '../style/Trabajos.css'
 import { UserContext } from '../context/UserContextB'
 import { useWorkHandler } from '../hooks/useWorkHandler'
+import Loader from '../components/microcomponents/Loader'
 
 
 export function Trabajos() {
+    const [isLoading, setIsLoading] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])
     const [imgUrlToDelete, setImgUrlToDelete] = useState(null)
@@ -17,12 +19,17 @@ export function Trabajos() {
     const { deleteWork } = useWorkHandler()
 
     useEffect(() => {
+        setIsLoading(true)
         try {
             fetch('https://melvera-api-c6l8.onrender.com/api/works')
                 .then(res => res.json())
-                .then(data => setImgs(data.getWorks))
+                .then(data => {
+                    setImgs(data.getWorks)
+                    setIsLoading(false)
+                })
         } catch (error) {
             console.log(error)
+            setIsLoading(false)
         }
     }, [])
 
@@ -78,45 +85,50 @@ export function Trabajos() {
 
     return (
         <>
-            <section className="trabajos">
-                {
-                    userData && <div className='flex justify-end userControls '>
-                        <NavLink to={'/crear-trabajo'} className={'flex justify-end'} ><span>Nuevo trabajo</span> ➕</NavLink>
-                    </div>
-                }
-                <div className="gridContainer">
-                    <ul >
+            {
+                isLoading ? <Loader /> :
+                    <section className="trabajos">
                         {
-                            imgs?.map(image => {
-                                return (
-                                    <li key={image._id}>
-                                        <Link>
-                                            <img src={image.imageUrl || imgDefault} alt="" id={`workImage${image._id}`} />
-                                        </Link>
-                                        {
-                                            userData &&
-                                            <button className='eraseBtn z-[100]' onClick={() => {
-                                                setShowModal(true)
-                                                setImgUrlToDelete(image.imageUrl)
-                                            }}>
-                                                <img src={smile} alt="botón bote de basura para eliminar el item" />
-                                            </button>
-
-                                        }
-                                    </li>
-                                )
-                            })
+                            userData && <div className='flex justify-end userControls '>
+                                <NavLink to={'/crear-trabajo'} className={'flex justify-end'} ><span>Nuevo trabajo</span> ➕</NavLink>
+                            </div>
                         }
-                        {showModal && (
-                            <DeleteModal
-                                isOpen={showModal}
-                                onClose={() => setShowModal(false)}
-                                onDelete={handleDeleteWork}
-                            />
-                        )}
-                    </ul>
-                </div>
-            </section>
+                        <div className="gridContainer">
+                            <ul >
+                                {
+                                    imgs?.map(image => {
+                                        return (
+                                            <li key={image._id}>
+                                                <Link>
+                                                    <img src={image.imageUrl || imgDefault} alt="" id={`workImage${image._id}`} />
+                                                </Link>
+                                                {
+                                                    userData &&
+                                                    <button className='eraseBtn z-[100]' onClick={() => {
+                                                        setShowModal(true)
+                                                        setImgUrlToDelete(image.imageUrl)
+                                                    }}>
+                                                        <img src={smile} alt="botón bote de basura para eliminar el item" />
+                                                    </button>
+
+                                                }
+                                            </li>
+                                        )
+                                    })
+                                }
+                                {showModal && (
+                                    <DeleteModal
+                                        isOpen={showModal}
+                                        onClose={() => setShowModal(false)}
+                                        onDelete={handleDeleteWork}
+                                    >
+                                        <p>¿Estás seguro/a de que deseas eliminar este trabajo?</p>
+                                    </DeleteModal>
+                                )}
+                            </ul>
+                        </div>
+                    </section>
+            }
         </>
     )
 }

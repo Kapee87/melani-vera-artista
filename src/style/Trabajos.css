@@ -44,7 +44,6 @@
 
 .userControls a {
     display: flex;
-    justify-content: end;
     padding-right: 1rem;
     align-items: center;
     gap: 1rem;

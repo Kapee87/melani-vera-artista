@@ -13,6 +13,7 @@ import NewExpo from '../pages/new entries forms/NewExpo.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
 import { urlToken } from '../utils/urlStore.js'
+import ExpoDetails from '../pages/ExpoDetails.jsx'
 
 
 
@@ -62,6 +63,7 @@ export default function Router() {
                         <Route path='sobre-mi' element={<SobreMi />} />
                         <Route path='crear-trabajo' element={<ProtectedRoute component={NewWork} />} />
                         <Route path='nueva-exposicion' element={<ProtectedRoute component={NewExpo} />} />
+                        <Route path='expo/:id' element={<ProtectedRoute component={ExpoDetails} />} />
                         <Route path='/admin' element={<ProtectedRoute component={AdminDashboard} />} />
                     </Route>
                     <Route path='/signin' element={<SignIn />} />

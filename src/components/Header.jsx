@@ -27,7 +27,7 @@ export function Header() {
                 className={`navbar w-screen flex justify-end items-center m-0 pr-[6vw] caveat text-[1.8em] fixed 
                 rounded-[20px] ${isScrolled ? 'md:glass' : ''} z-50`}>
                 <details className={`md:hidden collapse  text-center ${isScrolled ? 'glass top-0' : 'top-10'}`} >
-                    <summary className="collapse-title text-xl font-medium w-full ">Click to open/close</summary>
+                    <summary className="collapse-title text-xl font-medium w-full z-50 ">Click to open/close</summary>
                     <div className="collapse-content bg-[#CAEBDA] bg-opacity-90 rounded-lg">
                         <ul
                             className="flex flex-wrap p-[.3rem]  gap-[6vw] justify-between items-center [&_li]:w-72 [&_li]:z-[100] [&_li_div_div_a]:z-[100] ">
