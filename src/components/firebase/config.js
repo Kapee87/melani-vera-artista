@@ -33,7 +33,7 @@ export async function getStorageRefFromUrl(url) {
 
 
   const imageRef = ref(storage, url);
-
+  console.log(url);
   try {
     // Verificar si la referencia existe
     const metadata = await getMetadata(imageRef);

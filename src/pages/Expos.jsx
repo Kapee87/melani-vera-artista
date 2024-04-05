@@ -1,5 +1,4 @@
 import '../style/Expos.css'
-import expos from '../mocks/expos.json'
 import imgDefault from '../assets/imgDefault.jpg'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContextB'
@@ -7,12 +6,16 @@ import { NavLink } from 'react-router-dom'
 import Loader from '../components/microcomponents/Loader'
 import DeleteModal from '../components/microcomponents/DeletModal'
 import smile from '../assets/smile.png'
+import { useExpoHandler } from '../hooks/useExpoHandler'
+import Toastify from 'toastify-js'
 
 export function Expos() {
     const [expoFetch, setExpoFetch] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const { userData, setUserData } = useContext(UserContext)
     const [showModal, setShowModal] = useState(false)
+    const [expoToDelete, setExpoToDelete] = useState(null)
+    const { deleteExpo } = useExpoHandler()
 
     useEffect(() => {
         setIsLoading(true)
@@ -21,20 +24,61 @@ export function Expos() {
                 .then(res => res.json())
                 /* Cuando se empiece a manejar data real, hay que quitar la concatenacion de "expos" */
                 .then(data => {
-                    setExpoFetch(data.getExpos.concat(expos))
+                    setExpoFetch(data.getExpos)
                     setIsLoading(false)
+                    console.log(data.getExpos);
                 })
         } catch (error) {
             console.log(error)
             setIsLoading(false)
         }
     }, [])
-    useEffect(() => {
-        // console.log(expoFetch);
-    }, [expoFetch])
+
     const sendName = (expo) => {
         const sendNameTemp = expo.name?.split(' ').join('-') || expo.nombre.split(' ').join('-')
         return sendNameTemp
+    }
+
+    const handleDeleteExpo = async () => {
+        const imgUrlToDelete = expoFetch.find(el => el._id === expoToDelete).image
+        try {
+            const ExpoFound = await deleteExpo(imgUrlToDelete, expoToDelete)
+            if (ExpoFound) {
+                setShowModal(false)
+                Toastify({
+                    text: "Exposición eliminada de forma exitosa",
+                    duration: 2000,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, red, orange)",
+                    },
+                    onClick: function () {
+                    } // Callback after click
+                }).showToast();
+                const timeOut = setTimeout(() => {
+                    clearTimeout(timeOut)
+                    location.reload()
+                }, 2000)
+            }
+        } catch (error) {
+            console.log(error);
+            setShowModal(false)
+            Toastify({
+                text: error,
+                duration: 2000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, red, orange)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+        }
     }
 
     return (
@@ -55,45 +99,54 @@ export function Expos() {
                         </div>
                         {
                             /* Hay que cambiar algunos fallbacks cuando se empiecen a cargar datos reales. */
-                            expoFetch?.map(expo => (
-                                <div className='relative w-full bg-[#caebda] rounded-tl-[15%] rounded-br-[15%] rounded-tr-[10%] rounded-bl-[10%] p-4 bg-opacity-60 cursor-pointer' key={expo._id || expo.nombre}>
-                                    <NavLink
-                                        to={{
-                                            pathname: `../expo/${sendName(expo)}`,
-                                            search: `?id=${expo._id}`
-                                        }}
-                                        className={'z-10'}
+                            !expoFetch ? <h3 className='min-h-96 w-full text-center caveat text-4xl font-extrabold'>No hay exposiciones</h3> :
+                                expoFetch?.map(expo => (
+                                    <div className='relative w-full bg-[#caebda] rounded-tl-[15%] rounded-br-[15%] rounded-tr-[10%] rounded-bl-[10%] p-4 bg-opacity-60 cursor-pointer' key={expo._id || expo.nombre}>
+                                        <NavLink
+                                            to={{
+                                                pathname: `../expo/${sendName(expo)}`,
+                                                search: `?id=${expo._id}`
+                                            }}
+                                            className={'z-10'}
 
-                                    >
-                                        <article className='flex gap-1'>
-                                            <header className="expoCardHeader">
-                                                <h5>{expo.date || expo.fecha}</h5>
-                                                <h3>{expo.name || expo.nombre}</h3>
-                                                <p>{expo.info || expo.descripcion} </p>
-                                            </header>
-                                            <div className="expoCardBody">
-                                                <img src={expo.urlImagen || "www.foto.com/expo1"} alt="miniatura de exposicion" onError={event => event.target.src = imgDefault} />
+                                        >
+                                            <article className='flex flex-col md:flex-row gap-1'>
+                                                <header className="expoCardHeader">
+                                                    <div className='border-b-2  text-end pe-5'>
+                                                        <h5>{expo.date}</h5>
+                                                        <h5>{expo.address && expo.address}</h5>
+                                                    </div>
+                                                    <h3 className='font-bold caveat text-2xl'>{expo.name || expo.nombre}</h3>
+                                                    <p>{expo.info.slice(0, 50) || expo.descripcion.slice(0, 50)}...  </p>
+                                                    <sub className='absolute bottom-5 right-1/2'>Click para leer más</sub>
+                                                </header>
+                                                <div className="expoCardBody">
+                                                    <img src={expo.image || "www.foto.com/expo1"} alt="miniatura de exposicion" onError={event => event.target.src = imgDefault} />
+                                                </div>
+                                            </article>
+                                        </NavLink>
+                                        {
+                                            userData &&
+                                            <div className='tooltip absolute bottom-2 md:top-0 right-2 drop-shadow-lg z-20  ' data-tip="Eliminar">
+
+                                                <button className='w-10 md:w-12 hover:rotate-180 hover:transition transition' onClick={() => {
+                                                    setShowModal(true)
+                                                    setExpoToDelete(expo._id || expo.id)
+                                                }}>
+                                                    <img src={smile} alt="botón bote de basura para eliminar el item" />
+                                                </button>
                                             </div>
 
-                                        </article>
-                                    </NavLink>
-                                    {
-                                        userData &&
-                                        <button className='w-16 absolute top-0 right-0 drop-shadow-lg z-20 hover:rotate-180 hover:transition transition' onClick={() => {
-                                            setShowModal(true)
-                                        }}>
-                                            <img src={smile} alt="botón bote de basura para eliminar el item" />
-                                        </button>
+                                        }
+                                    </div>
+                                ))
 
-                                    }
-                                </div>
-                            ))
                         }
                         {showModal && (
                             <DeleteModal
                                 isOpen={showModal}
                                 onClose={() => setShowModal(false)}
-                                onDelete={() => console.log('delete expo')}
+                                onDelete={handleDeleteExpo}
                             >
                                 <p>¿Estás seguro/a de que deseas eliminar esta exposición/presentación/muestra?</p>
                             </DeleteModal>
