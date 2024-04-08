@@ -69,7 +69,7 @@ function NewExpo() {
         <div className=' min-h-screen flex flex-col'>
             <form className={`
                 shadow-xl p-5 md:p-12 rounded-xl drop-shadow-lg bg-[#caebda] bg-opacity-65
-                flex flex-col gap-4 items-end justify-center
+                flex flex-col gap-4 items-end
                 [&_label]:flex [&_label]:gap-2 [&_label]:items-baseline [&_label>input]:rounded-md [&_label>textarea]:rounded-md [&_label]:flex-col md:[&_label]:flex-row z-10 
             `}
                 onSubmit={handleSubmit} >
