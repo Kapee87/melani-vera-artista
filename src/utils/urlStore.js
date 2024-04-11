@@ -11,3 +11,5 @@ export const urlToken = `${urlAuth}/token`
 export const urlWorks = `${urlBase}/works`
 
 export const urlExpos = `${urlBase}/expos`
+
+export const urlUser = `${urlBase}/user`

@@ -18,7 +18,10 @@ export function Header() {
         // Acá falta agregar lógica de logout
     }
     const handleNavClick = () => {
-        location.reload()
+        const timeout = setTimeout(() => {
+            location.reload()
+            clearTimeout(timeout)
+        }, 500)
     }
 
     return (
@@ -57,7 +60,7 @@ export function Header() {
                                         userData?.online ? (
                                             <div className="flex flex-col justify-center items-center">
                                                 <NavLink to="/admin" onClick={handleNavClick} >Editar 🖌️</NavLink>
-                                                <div onClick={handleSignout} className="text-black border-t-2 hover:cursor-pointer z-50" >Cerrar sesión 🔐 </div>
+                                                <div onClick={handleSignout} className="text-black border-t-2 mt-2 hover:cursor-pointer z-50" >Cerrar sesión 🔐 </div>
                                                 <NavLink to={'/admin'} className="avatar" onClick={handleNavClick}>
                                                     <div className="w-24 rounded-full">
                                                         {
@@ -115,8 +118,8 @@ export function Header() {
                                         {
                                             userData?.online ? (
                                                 <div className="flex flex-col justify-center items-center">
-                                                    <NavLink to="/admin" className={`cursor-pointer z-0`}>Editar 🖌️</NavLink>
-                                                    <div onClick={handleSignout} className="border-t-2 cursor-pointer z-0" >Cerrar sesión 🔐 </div>
+                                                    <NavLink to="/admin" className={`cursor-pointer z-0`} onClick={handleNavClick}>Editar 🖌️</NavLink>
+                                                    <div onClick={handleSignout} className="border-t-2 cursor-pointer mt-2 z-0" >Cerrar sesión 🔐 </div>
                                                     <div className="avatar">
                                                         <div className="w-24 rounded-full">
                                                             {
@@ -145,36 +148,8 @@ export function Header() {
                             </dialog>
                         </li>
                     </ul>
-
-
-                    {/*   <div className=" min-h-[5rem] h-[8vh] md:flex items-center justify-center rounded-[50px] overflow-hidden sm:m-[.3rem] ">
-                        {
-                           
-                                : 
-
-                        }
-                    </div> */}
-
                 </nav>
             </header>
-            {/* 
-            <div className="[&_div]:absolute [&_div]:[transition:all_1s] [&_div]:right-[12vw] [&_div]:top-[8vw] [&_div]:w-32 [&_div]:h-20 [&_div]:p-4 [&_div]:bg-[rgba(255,_255,_255,_0.25)] [&_div]:[box-shadow:0_8px_32px_0_rgba(31,_38,_135,_0.37)] [&_div]:backdrop-filter [&_div]:backdrop-blur-sm [&_div]:rounded-[10px] [&_div]:border-[1px]  [&_div]:border-[solid rgba(255,255,255,0.18)] [&_div]:flex [&_div]:justify-center [&_div]:items-center caveat [&_div_a]:bg-transparent [&_div_a]:border-[none] [&_div_a]:text-[1.3rem] [&_div_a]:font-semibold">
-
-             [&_div]:bg-[rgba(255,_255,_255,_0.25)] caveat [&_div_a]:bg-transparent [&_div_a]:border-[none] [&_div_a]:text-[1.3rem] [&_div_a]:font-semibold">
-
-                {
-                    popup && userData?.online ? (
-                        <div className="flex-col" onMouseLeave={() 
-                            <NavLink to="/admin">Editar 🖌️</NavLink>
-                            <button onClick={handleSignout}>Cerrar sesión</button>
-                        </div>
-                    )
-                        : popup && <div className="top-24" onMouseLeave={() 
-                            <NavLink to="/signin" >Iniciar sesión</NavLink>
-                        </div>
-                }
-            </div> */}
-
         </>
     )
 }

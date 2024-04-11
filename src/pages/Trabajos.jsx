@@ -115,7 +115,9 @@ export function Trabajos() {
                                                 <span className='hidden transition-all absolute bg-black
                                                  bg-opacity-40 w-full items-center justify-center text-white py-2 flex-col'>
                                                     {image.name}
-                                                    <p className='text-xs opacity-75'>Abrir imagen</p>
+                                                    <Link to={image.imageUrl} target='_blank'>
+                                                        <p className='text-xs opacity-75 text-white'>Abrir imagen</p>
+                                                    </Link>
                                                 </span>
                                             </li>
                                         )
