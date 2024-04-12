@@ -26,7 +26,6 @@ export function Expos() {
                 .then(data => {
                     setExpoFetch(data.getExpos)
                     setIsLoading(false)
-                    console.log(data.getExpos);
                 })
         } catch (error) {
             console.log(error)
@@ -99,7 +98,7 @@ export function Expos() {
                         </div>
                         {
                             /* Hay que cambiar algunos fallbacks cuando se empiecen a cargar datos reales. */
-                            !expoFetch ? <h3 className='min-h-96 w-full text-center caveat text-4xl font-extrabold'>No hay exposiciones</h3> :
+                            !expoFetch ? <h3 className='min-h-96 w-full text-center caveat text-4xl font-extrabold'>No hay exposiciones aún</h3> :
                                 expoFetch?.map(expo => (
                                     <div className='relative w-full bg-[#caebda] rounded-tl-[15%] rounded-br-[15%] rounded-tr-[10%] rounded-bl-[10%] p-4 bg-opacity-60 cursor-pointer' key={expo._id || expo.nombre}>
                                         <NavLink

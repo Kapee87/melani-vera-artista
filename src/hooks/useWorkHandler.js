@@ -16,7 +16,7 @@ export function useWorkHandler() {
 
 
     const postNewWork = async (newWork) => {
-        console.log(newWork, token);
+
         if (!token) return navigate('/', { replace: true })
 
         try {
@@ -25,7 +25,7 @@ export function useWorkHandler() {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(createWork);
+
             Toastify({
                 text: `Creado con éxito`,
                 duration: 2000,
@@ -43,6 +43,7 @@ export function useWorkHandler() {
                 navigate('/')
             }, 2000)
         } catch (error) {
+            deleteImgFirebase(newWork.imageUrl)
             Toastify({
                 text: error,
                 duration: 3000,
@@ -62,9 +63,10 @@ export function useWorkHandler() {
         try {
             //ref search for the img on firebase storage
             const imageRefToDelete = await getStorageRefFromUrl(imgUrl)
-            console.log(imageRefToDelete);
+
             try {
                 const imagedeletionResult = await deleteFile(imageRefToDelete)
+
             } catch (error) {
                 console.log(error);
             }
@@ -83,19 +85,19 @@ export function useWorkHandler() {
         } catch (error) {
             console.log(error)
         }
-        console.log(token);
+
         try {
             const deletedwork = await axios.delete(`${urlWorks}/${workId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(deletedwork);
+
             return "deleted"
         } catch (error) {
             console.log(error);
         }
 
     }
-    return { postNewWork, token, deleteWork }
+    return { postNewWork, token, deleteWork, deleteImgFirebase }
 }

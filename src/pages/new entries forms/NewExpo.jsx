@@ -25,7 +25,6 @@ function NewExpo() {
             website: inputRef.website.current.value,
             image: ''
         }
-        console.log(imageToSend)
         try {
             const result = await uploadFile(imageToSend, 'exposiciones')
             newExpo.image = result

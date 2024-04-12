@@ -20,7 +20,7 @@ import ExpoDetails from '../pages/ExpoDetails.jsx'
 export default function Router() {
     const { userData, setUserData } = useContext(UserContext)
     const token = sessionStorage.getItem('token')
-    // console.log(token);
+
     useEffect(() => {
         async function loadaxios() {
             try {
@@ -29,10 +29,8 @@ export default function Router() {
                         Authorization: `Bearer ${token}`
                     }
                 });
-                // console.log(data.user);
                 const verObj = { ...data.user, 'online': true }
                 setUserData(verObj)
-                // console.log(userData)
             } catch (error) {
                 console.log(error)
                 sessionStorage.removeItem('token')
@@ -42,14 +40,8 @@ export default function Router() {
         token
             ? loadaxios()
             : setUserData(null)
-        // console.log(userData);
+
     }, [])
-
-    //useEffect para ver el estado userData
-    /* useEffect(() => {
-        console.log(userData)
-    }, [userData]) */
-
 
     return (
         <Suspense fallback={<h3>Cargando...</h3>}>

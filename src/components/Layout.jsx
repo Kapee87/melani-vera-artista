@@ -8,9 +8,12 @@ import { useEffect } from "react";
 
 export function Layout() {
     const { title } = usePath()
+
+    /* util para debugging del ruteo
     useEffect(() => {
         console.log(title);
-    }, [title])
+    }, [title]) 
+    */
 
     return (
         <>

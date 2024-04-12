@@ -16,7 +16,7 @@ export function useExpoHandler() {
 
 
     const postNewExpo = async (newExpo) => {
-        console.log(newExpo, token);
+
         if (!token) return navigate('/', { replace: true })
 
         try {
@@ -25,7 +25,7 @@ export function useExpoHandler() {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(createExpo);
+
             Toastify({
                 text: `Creado con éxito`,
                 duration: 2000,
@@ -43,6 +43,7 @@ export function useExpoHandler() {
                 navigate('/exposiciones')
             }, 2000)
         } catch (error) {
+            deleteImgFirebase(newExpo.image)
             Toastify({
                 text: error,
                 duration: 3000,
@@ -82,15 +83,13 @@ export function useExpoHandler() {
         } catch (error) {
             console.log(error)
         }
-        console.log(token);
+
         try {
-            console.log(ExpoId);
             const deletedExpo = await axios.delete(`${urlExpos}/${ExpoId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(deletedExpo);
             return "deleted"
         } catch (error) {
             console.log(error);

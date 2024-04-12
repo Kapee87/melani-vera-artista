@@ -7,7 +7,7 @@ export function useIsLogged() {
     const { token } = useContext(UserContext)
     const navigate = useNavigate()
     const isLogged = () => {
-        // console.log(token, sessionStorage.getItem('token'));
+        
         if (!token && !sessionStorage.getItem('token')) {
             toastify({
                 text: `Por favor, iniciar sesión para ingresar a esta sección`,

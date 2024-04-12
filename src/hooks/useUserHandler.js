@@ -28,7 +28,6 @@ export function useUserHandler() {
             try {
                 const result = await uploadFile(imageToSend, 'perfil')
                 newUser.profileImage = result
-                console.log(result);
             } catch (error) {
                 console.log(error);
             }
@@ -44,7 +43,6 @@ export function useUserHandler() {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(updatedUser);
             Toastify({
                 text: `Perfil actualizado correctamente`,
                 duration: 2000,
@@ -80,7 +78,6 @@ export function useUserHandler() {
         try {
             //ref search for the img on firebase storage
             const imageRefToDelete = await getStorageRefFromUrl(imgUrl)
-            console.log(imageRefToDelete);
             try {
                 const imagedeletionResult = await deleteFile(imageRefToDelete)
             } catch (error) {

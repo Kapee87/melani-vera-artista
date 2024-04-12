@@ -19,7 +19,20 @@ function NewWork() {
       detail: inputRef.detail.current.value,
       imageUrl: ''
     }
-    console.log(imageToSend)
+    if (newWork.name.length < 1) {
+      return Toastify({
+        text: 'El nombre es requerido.',
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #fc0202, #ffa303)"
+        },
+        onClick: function () { } // Callback after click
+      }).showToast();
+    }
     try {
       const result = await uploadFile(imageToSend, 'trabajos')
       newWork.imageUrl = result
@@ -27,6 +40,7 @@ function NewWork() {
       console.log(error);
     }
     postNewWork(newWork)
+
   }
 
   const handleOnChange = (e) => {

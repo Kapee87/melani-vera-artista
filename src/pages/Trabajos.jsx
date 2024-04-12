@@ -10,13 +10,14 @@ import { useWorkHandler } from '../hooks/useWorkHandler'
 import Loader from '../components/microcomponents/Loader'
 
 
+
 export function Trabajos() {
     const [isLoading, setIsLoading] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])
     const [imgUrlToDelete, setImgUrlToDelete] = useState(null)
     const { userData, setUserData } = useContext(UserContext)
-    const { deleteWork } = useWorkHandler()
+    const { deleteWork, deleteImgFirebase } = useWorkHandler()
 
     useEffect(() => {
         setIsLoading(true)
@@ -55,7 +56,7 @@ export function Trabajos() {
                 }).showToast();
                 const timeOut = setTimeout(() => {
                     clearTimeout(timeOut)
-                    location.reload()
+                    // location.reload()
                 }, 2000)
             }
         } catch (error) {
@@ -74,14 +75,7 @@ export function Trabajos() {
                 onClick: function () { } // Callback after click
             }).showToast();
         }
-        /*  console.log('trabajo eliminado');
-          */
     }
-    // useEffect(() => {
-    //     console.log(showModal);
-    // }, [])
-
-
 
     return (
         <>
@@ -96,32 +90,36 @@ export function Trabajos() {
                         <div className="gridContainer">
                             <ul >
                                 {
-                                    imgs?.map(image => {
-                                        return (
-                                            <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all'>
-                                                <Link to={image.imageUrl} target='_blank'>
-                                                    <img src={image.imageUrl || imgDefault} alt="" id={`workImage${image._id}`} />
-                                                </Link>
-                                                {
-                                                    userData &&
-                                                    <button className='eraseBtn z-[100]' onClick={() => {
-                                                        setShowModal(true)
-                                                        setImgUrlToDelete(image.imageUrl)
-                                                    }}>
-                                                        <img src={smile} alt="botón bote de basura para eliminar el item" />
-                                                    </button>
-
-                                                }
-                                                <span className='hidden transition-all absolute bg-black
-                                                 bg-opacity-40 w-full items-center justify-center text-white py-2 flex-col'>
-                                                    {image.name}
-                                                    <Link to={image.imageUrl} target='_blank'>
-                                                        <p className='text-xs opacity-75 text-white'>Abrir imagen</p>
+                                    !imgs
+                                        ?
+                                        <h3 className='min-h-96 w-full text-center caveat text-4xl font-extrabold'>No hay trabajos aún.</h3>
+                                        :
+                                        imgs?.map(image => {
+                                            return (
+                                                <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all'>
+                                                    <Link /* to={image.imageUrl} target='_blank' */ >
+                                                        <img src={image.imageUrl || imgDefault} alt="" id={`workImage${image._id}`} />
                                                     </Link>
-                                                </span>
-                                            </li>
-                                        )
-                                    })
+                                                    {
+                                                        userData &&
+                                                        <button className='eraseBtn z-[100]' onClick={() => {
+                                                            setShowModal(true)
+                                                            setImgUrlToDelete(image.imageUrl)
+                                                        }}>
+                                                            <img src={smile} alt="botón bote de basura para eliminar el item" />
+                                                        </button>
+
+                                                    }
+                                                    <span className='hidden transition-all absolute bg-black
+                                                 bg-opacity-40 w-full items-center justify-center text-white py-2 flex-col'>
+                                                        {image.name}
+                                                        <Link to={image.imageUrl} target='_blank'>
+                                                            <p className='text-xs opacity-75 text-white'>Abrir imagen</p>
+                                                        </Link>
+                                                    </span>
+                                                </li>
+                                            )
+                                        })
                                 }
                                 {showModal && (
                                     <DeleteModal

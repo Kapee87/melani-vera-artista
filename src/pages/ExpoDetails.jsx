@@ -15,7 +15,6 @@ function ExpoDetails() {
         try {
             fetch(`https://melvera-api-c6l8.onrender.com/api/expos/${id}`)
                 .then(res => res.json())
-                /* Cuando se empiece a manejar data real, hay que quitar la concatenacion de "expos" */
                 .then(data => {
                     setExpoDetail(data.Expo)
                     setIsLoading(false)

@@ -15,7 +15,7 @@ export function SobreMi() {
                     setProfileInfo(data.Users[0])
                     setIsLoading(false)
                 })
-            // .then(data => console.log(profileInfo))
+
         } catch (error) {
             console.log(error)
             setIsLoading(false)
