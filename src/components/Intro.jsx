@@ -12,15 +12,15 @@ export function Intro() {
 
     return (
         <>
-            <section className="introContainer">
-                <img src={deco2} alt="decorador de página" className='deco2'/>
+            <section className="introContainer z-50 text-slate-800">
+                <img src={deco2} alt="decorador de página" className='deco2' />
                 <h1>Mélani Vera</h1>
                 <h4>Artista Plástica</h4>
                 <p></p>
                 {/* <button onClick={handleClick}>
                     ingresar
                 </button> */}
-                <img src={deco3} alt="decorador de página" className='deco3'/>
+                <img src={deco3} alt="decorador de página" className='deco3' />
             </section>
         </>
     )

@@ -96,7 +96,7 @@ export function Trabajos() {
                                         :
                                         imgs?.map(image => {
                                             return (
-                                                <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all'>
+                                                <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all lg:max-w-64'>
                                                     <Link to={image.imageUrl} target='_blank' >
                                                         <img src={image.imageUrl.length > 0 ? image.imageUrl : imgDefault} alt="" id={`workImage${image._id}`} />
                                                     </Link>
