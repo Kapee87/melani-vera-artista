@@ -19,9 +19,18 @@ function NewWork() {
       detail: inputRef.detail.current.value,
       imageUrl: ''
     }
-    if (newWork.name.length < 1) {
-      return Toastify({
-        text: 'El nombre es requerido.',
+    if (!newWork.name || (!imageToSend || !imageRender)) {
+      let message = '';
+      if (!newWork.name) {
+        message += 'Por favor ingresa el nombre del cuadro/obra.';
+      }
+      if (!imageToSend || !imageRender) {
+        if (message) message += '\n';
+        message += 'Por favor selecciona una imagen.';
+      }
+
+      Toastify({
+        text: message,
         duration: 3000,
         close: true,
         gravity: "top", // `top` or `bottom`
@@ -32,6 +41,7 @@ function NewWork() {
         },
         onClick: function () { } // Callback after click
       }).showToast();
+      return;
     }
     try {
       const result = await uploadFile(imageToSend, 'trabajos')

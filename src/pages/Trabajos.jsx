@@ -56,7 +56,7 @@ export function Trabajos() {
                 }).showToast();
                 const timeOut = setTimeout(() => {
                     clearTimeout(timeOut)
-                    // location.reload()
+                    location.reload()
                 }, 2000)
             }
         } catch (error) {
@@ -97,8 +97,8 @@ export function Trabajos() {
                                         imgs?.map(image => {
                                             return (
                                                 <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all'>
-                                                    <Link /* to={image.imageUrl} target='_blank' */ >
-                                                        <img src={image.imageUrl || imgDefault} alt="" id={`workImage${image._id}`} />
+                                                    <Link to={image.imageUrl} target='_blank' >
+                                                        <img src={image.imageUrl.length > 0 ? image.imageUrl : imgDefault} alt="" id={`workImage${image._id}`} />
                                                     </Link>
                                                     {
                                                         userData &&

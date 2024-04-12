@@ -1,12 +1,14 @@
-import React, { useRef, useState } from 'react'
-import { useExpoHandler } from '../../hooks/useExpoHandler'
-import Toastify from 'toastify-js'
-import { uploadFile } from '../../components/firebase/config'
+import React, { useRef, useState } from 'react';
+import { useExpoHandler } from '../../hooks/useExpoHandler';
+import Toastify from 'toastify-js';
+import { uploadFile } from '../../components/firebase/config';
+import imgDefault from '../../assets/imgDefault.jpg';
 
 function NewExpo() {
-    const { postNewExpo } = useExpoHandler()
-    const [imageRender, setImageRender] = useState(null)
-    const [imageToSend, setImageToSend] = useState(null)
+    const { postNewExpo } = useExpoHandler();
+    const [imageRender, setImageRender] = useState(null);
+    const [imageToSend, setImageToSend] = useState(null);
+    const [useGenericImage, setUseGenericImage] = useState(false);
     const inputRef = {
         name: useRef(),
         info: useRef(),
@@ -14,9 +16,10 @@ function NewExpo() {
         image: useRef(),
         address: useRef(),
         website: useRef()
-    }
+    };
+
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const newExpo = {
             name: inputRef.name.current.value,
             info: inputRef.info.current.value,
@@ -24,23 +27,46 @@ function NewExpo() {
             address: inputRef.address.current.value,
             website: inputRef.website.current.value,
             image: ''
+        };
+        if (!newExpo.name || (!useGenericImage && !imageToSend)) {
+            let message = '';
+            if (!newExpo.name) {
+                message += 'Por favor ingresa el nombre del evento/expo.';
+            }
+            if (!useGenericImage && !imageToSend) {
+                if (message) message += '\n';
+                message += 'Por favor selecciona una imagen para la exposición.';
+            }
+
+            Toastify({
+                text: message,
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #fc0202, #ffa303)"
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+            return;
         }
+
         try {
-            const result = await uploadFile(imageToSend, 'exposiciones')
-            newExpo.image = result
+            const result = await uploadFile(useGenericImage ? imgDefault : imageToSend, 'exposiciones');
+            newExpo.image = result;
+            postNewExpo(newExpo);
         } catch (error) {
             console.log(error);
         }
-        postNewExpo(newExpo)
-    }
+    };
 
     const handleOnChange = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const file = e.target.files[0];
-        console.log(file);
-        setImageToSend(file)
+        setImageToSend(file);
         if (file) {
-            // Verificar si el archivo es una imagen
             if (file.type.startsWith('image/')) {
                 const reader = new FileReader();
                 reader.onload = (event) => {
@@ -63,7 +89,13 @@ function NewExpo() {
                 e.target.value = null;
             }
         }
-    }
+    };
+
+    const handleGenericImage = (e) => {
+        setUseGenericImage(e.target.checked);
+        setImageRender(e.target.checked ? imgDefault : null)
+    };
+
     return (
         <div className=' min-h-screen flex flex-col'>
             <form className={`
@@ -94,16 +126,20 @@ function NewExpo() {
                 </label>
                 <label htmlFor="image">
                     Imagen:
-                    <input name='image' ref={inputRef.image} type="file" onChange={handleOnChange} />
+                    <input name='image' ref={inputRef.image} type="file" onChange={handleOnChange} id='imageInput' />
                 </label>
+                <label htmlFor="genericImage">
+                    Usar imagen genérica
+                    <input name='genericImage' type="checkbox" onChange={handleGenericImage} />
+                </label>
+
                 {
                     imageRender && <img src={imageRender} alt="imagen seleccionada por el usuario para crear una nueva entrada" className='w-full max-w-72 self-center  object-cover object-center rounded-2xl' />
                 }
                 <input type="submit" value="Crear exposición" className='btn btn-outline ' />
             </form>
         </div>
-    )
+    );
 }
 
 export default NewExpo;
-

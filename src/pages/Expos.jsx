@@ -116,7 +116,7 @@ export function Expos() {
                                                         <h5>{expo.address && expo.address}</h5>
                                                     </div>
                                                     <h3 className='font-bold caveat text-2xl'>{expo.name || expo.nombre}</h3>
-                                                    <p>{expo.info.slice(0, 50) || expo.descripcion.slice(0, 50)}...  </p>
+                                                    <p>{expo.info?.slice(0, 50)}...  </p>
                                                     <sub className='absolute bottom-5 right-1/2'>Click para leer más</sub>
                                                 </header>
                                                 <div className="expoCardBody">
