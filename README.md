@@ -42,19 +42,19 @@ To get this project running on your local machine:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Kapee87/melani-vera-artista.git
-   ```
+    ```
 2. Install the necessary packages:
-  ```bash
-Copy code
-cd melani-vera-artista
-npm install
-  ```
+    ```bash
+  Copy code
+  cd melani-vera-artista
+  npm install
+    ```
 
 3. Run the development server:
-```bash
-Copy code
-npm start
-```
+    ```bash
+  Copy code
+  npm start
+    ```
 
 ## Contributing 🤝
 Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
@@ -71,15 +71,15 @@ Bienvenido al repositorio de GitHub para el sitio web oficial de Melani Vera, un
 El sitio web de Melani Vera está diseñado para mostrar su portafolio en línea. Construido utilizando tecnologías web modernas, ofrece una interfaz responsiva y visualmente atractiva para exhibir su arte y interactuar con su audiencia.
 
 ## Tecnologías Utilizadas
-- ** React ** - Una biblioteca de JavaScript para construir interfaces de usuario.
-- ** Tailwind CSS ** - Un marco de trabajo CSS que prioriza la creación de diseños personalizados de manera rápida.
-- ** DaisyUI ** - Un plugin de Tailwind CSS que proporciona componentes de UI hermosos.
-- ** Firebase Storage ** - Un servicio de almacenamiento de archivos en línea para almacenar y servir contenido generado por los usuarios.
+- **React** - Una biblioteca de JavaScript para construir interfaces de usuario.
+- **Tailwind CSS** - Un marco de trabajo CSS que prioriza la creación de diseños personalizados de manera rápida.
+- **DaisyUI** - Un plugin de Tailwind CSS que proporciona componentes de UI hermosos.
+- **Firebase Storage** - Un servicio de almacenamiento de archivos en línea para almacenar y servir contenido generado por los usuarios.
 
 ## Características 💡
-- ** Vista de Galería **: Navega por las obras de arte de Melani en una galería bellamente diseñada.
-- ** Diseño Responsivo **: Asegura una excelente experiencia de visualización en todos los dispositivos.
-- ** Gestión de Imágenes **: Utiliza Firebase Storage para un manejo eficiente de las imágenes.
+- **Vista de Galería** - : Navega por las obras de arte de Melani en una galería bellamente diseñada.
+- **Diseño Responsivo** - : Asegura una excelente experiencia de visualización en todos los dispositivos.
+- **Gestión de Imágenes** - : Utiliza Firebase Storage para un manejo eficiente de las imágenes.
 
 ## Instalación y Configuración 🔧
 
