@@ -86,23 +86,23 @@ El sitio web de Melani Vera está diseñado para mostrar su portafolio en línea
 Para ejecutar este proyecto en tu máquina local:
 
 1. Clona el repositorio:
-```bash
-Copy code
-git clone https://github.com/Kapee87/melani-vera-artista.git
-```
+    ```bash
+  Copy code
+  git clone https://github.com/Kapee87/melani-vera-artista.git
+    ```
 
 2.Instala los paquetes necesarios:
-```bash
-Copy code
-cd melani-vera-artista
-npm install
-```
+    ```bash
+  Copy code
+  cd melani-vera-artista
+  npm install
+    ```
 
 3.Ejecuta el servidor de desarrollo:
-```bash
-Copy code
-npm start
-```
+    ```bash
+  Copy code
+  npm start
+    ```
 
 ## Contribuir 🤝
 Las contribuciones hacen que la comunidad de código abierto sea un lugar fantástico para aprender, inspirar y crear. Cualquier contribución que hagas será muy apreciada.
