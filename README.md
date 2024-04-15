@@ -3,20 +3,21 @@
 Welcome to the GitHub repository for the official website of Melani Vera, an artist known for her vibrant and culturally rich artworks. This repository hosts the frontend project built with React, styled using Tailwind CSS and DaisyUI, and utilizes Firebase Storage for image management. Visit her website [here](https://melani-vera.vercel.app).
 
 ## Table of Contents - English 📑
-- [About the Project](#about-the-project-)
-- [Technologies Used](#technologies-used)
-- [Features](#features-)
-- [Installation and Setup](#installation-and-setup-)
-- [Contributing](#contributing-)
-- [Support the Artist](#support-the-artist-)
-  ## Tabla de Contenidos - Español 📑
-- [Sitio Web de Melani Vera Artista](#sitio-web-de-melani-vera-artista-)
-- [Acerca del Proyecto](#acerca-del-proyecto-)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Características](#características-)
-- [Instalación y Configuración](#instalación-y-configuración-)
-- [Contribuir](#contribuir-)
-- [Apoya a la artista](#apoya-a-la-artista)
+- [Melani Vera Artista Website 🎨](#melani-vera-artista-website-)
+  - [Table of Contents - English 📑](#table-of-contents---english-)
+  - [About the Project 🌐](#about-the-project-)
+    - [Technologies Used](#technologies-used)
+  - [Features 💡](#features-)
+  - [Installation and Setup 🔧](#installation-and-setup-)
+  - [Contributing 🤝](#contributing-)
+  - [Support the Artist 💖](#support-the-artist-)
+  - [Sitio Web de Melani Vera Artista 🎨](#sitio-web-de-melani-vera-artista-)
+  - [Acerca del Proyecto 🌐](#acerca-del-proyecto-)
+  - [Tecnologías Utilizadas](#tecnologías-utilizadas)
+  - [Características 💡](#características-)
+  - [Instalación y Configuración 🔧](#instalación-y-configuración-)
+  - [Contribuir 🤝](#contribuir-)
+  - [Apoya a la artista 💖](#apoya-a-la-artista-)
 
 ## About the Project 🌐
 
@@ -40,21 +41,21 @@ The Melani Vera website is designed to showcase Melani's portfolio online. Built
 To get this project running on your local machine:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kapee87/melani-vera-artista.git
-    ```
+```bash
+git clone https://github.com/Kapee87/melani-vera-artista.git
+ ```
 2. Install the necessary packages:
-    ```bash
-  Copy code
-  cd melani-vera-artista
-  npm install
-    ```
+```bash
+Copy code
+cd melani-vera-artista
+npm install
+```
 
 3. Run the development server:
-    ```bash
-  Copy code
-  npm start
-    ```
+```bash
+Copy code
+npm start
+```
 
 ## Contributing 🤝
 Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
@@ -86,23 +87,23 @@ El sitio web de Melani Vera está diseñado para mostrar su portafolio en línea
 Para ejecutar este proyecto en tu máquina local:
 
 1. Clona el repositorio:
-    ```bash
-  Copy code
-  git clone https://github.com/Kapee87/melani-vera-artista.git
-    ```
+```bash
+Copy code
+git clone https://github.com/Kapee87/melani-vera-artista.git
+```
 
 2.Instala los paquetes necesarios:
-    ```bash
-  Copy code
-  cd melani-vera-artista
-  npm install
-    ```
+```bash
+Copy code
+cd melani-vera-artista
+npm install
+```
 
 3.Ejecuta el servidor de desarrollo:
-    ```bash
-  Copy code
-  npm start
-    ```
+```bash
+Copy code
+npm start
+```
 
 ## Contribuir 🤝
 Las contribuciones hacen que la comunidad de código abierto sea un lugar fantástico para aprender, inspirar y crear. Cualquier contribución que hagas será muy apreciada.
