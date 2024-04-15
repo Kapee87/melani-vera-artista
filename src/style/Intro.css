@@ -12,7 +12,6 @@
     bottom: -5rem;
     right: 1rem;
     transform: scale(1.3);
-
 }
 
 .introContainer {
@@ -44,7 +43,6 @@
     animation: landing 5s ease-in-out;
     z-index: 100;
 }
-
 
 .introContainer p::after {
     font-size: .8rem;
@@ -119,6 +117,10 @@
         background-size: auto;
         background-position: center;
         font-size: 5px;
+    }
+
+    .introContainer p::after {
+        left: 10vw;
     }
 
 }

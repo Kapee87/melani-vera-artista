@@ -25,7 +25,7 @@ export function SobreMi() {
         <>
             {
                 isLoading ? <Loader /> :
-                    <section className="flex flex-col w-4/5 md:w-2/3 mx-auto md:gap-10 backdrop-blur-sm text-primary-content min-h-screen">
+                    <section className="flex flex-col w-4/5 md:w-2/3 mx-auto md:gap-10 backdrop-blur-sm text-black min-h-screen">
                         <div className="avatar flex flex-col md:flex-row items-center gap-4 caveat md:self-end">
                             <h2 className="text-4xl drop-shadow-lg "> {profileInfo.name} </h2>
                             <div className="w-32 md:w-40 mask mask-circle">

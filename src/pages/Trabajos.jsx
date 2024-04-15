@@ -96,7 +96,7 @@ export function Trabajos() {
                                         :
                                         imgs?.map(image => {
                                             return (
-                                                <li key={image._id} className='[&_span]:hover:flex [&_span]:hover:transition-all lg:max-w-64'>
+                                                <li key={image._id} className='lg:[&_span]:hover:flex lg:[&_span]:hover:transition-all lg:max-w-64'>
                                                     <Link to={image.imageUrl} target='_blank' >
                                                         <img src={image.imageUrl.length > 0 ? image.imageUrl : imgDefault} alt="" id={`workImage${image._id}`} />
                                                     </Link>
@@ -110,7 +110,7 @@ export function Trabajos() {
                                                         </button>
 
                                                     }
-                                                    <span className='hidden transition-all absolute bg-black
+                                                    <span className='hidden lg:transition-all absolute bg-black
                                                  bg-opacity-40 w-full items-center justify-center text-white py-2 flex-col'>
                                                         {image.name}
                                                         <Link to={image.imageUrl} target='_blank'>
