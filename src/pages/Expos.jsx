@@ -24,7 +24,8 @@ export function Expos() {
                 .then(res => res.json())
                 /* Cuando se empiece a manejar data real, hay que quitar la concatenacion de "expos" */
                 .then(data => {
-                    setExpoFetch(data.getExpos)
+                    const sortedExpos = data.getExpos.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                    setExpoFetch(sortedExpos)
                     setIsLoading(false)
                 })
         } catch (error) {

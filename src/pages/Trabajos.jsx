@@ -25,7 +25,8 @@ export function Trabajos() {
             fetch('https://melvera-api-c6l8.onrender.com/api/works')
                 .then(res => res.json())
                 .then(data => {
-                    setImgs(data.getWorks)
+                    const sortedImgs = data.getWorks.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                    setImgs(sortedImgs);
                     setIsLoading(false)
                 })
         } catch (error) {

@@ -3,7 +3,6 @@ import { Header } from "./Header"
 import deco1 from '../assets/decorator1.png'
 import deco4 from '../assets/deco4.png'
 import { usePath } from "../hooks/usePath";
-import { useEffect } from "react";
 import WapBtn from "./microcomponents/WapBtn";
 
 
