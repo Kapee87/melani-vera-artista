@@ -101,7 +101,7 @@ function NewWork() {
           <input name='imageUrl' ref={inputRef.imageUrl} type="file" onChange={handleOnChange} />
         </label>
         {
-          imageRender && <img src={imageRender} alt="imagen seleccionada por el usuario para crear una nueva entrada" className='w-full max-w-72 self-center  object-cover object-center rounded-2xl' />
+          imageRender && <img src={imageRender} alt="imagen seleccionada por el usuario para crear una nueva entrada" className='w-full max-w-72 self-center  object-cover object-center rounded-2xl' loading="lazy" />
         }
         <input type="submit" value="Crear trabajo" className='btn btn-outline ' />
       </form>

@@ -121,7 +121,7 @@ export function Expos() {
                                                     <sub className='absolute bottom-5 right-1/2'>Click para leer más</sub>
                                                 </header>
                                                 <div className="expoCardBody">
-                                                    <img src={expo.image || "www.foto.com/expo1"} alt="miniatura de exposicion" onError={event => event.target.src = imgDefault} />
+                                                    <img src={expo.image || "www.foto.com/expo1"} alt="miniatura de exposicion" onError={event => event.target.src = imgDefault} loading="lazy" />
                                                 </div>
                                             </article>
                                         </NavLink>
@@ -133,7 +133,7 @@ export function Expos() {
                                                     setShowModal(true)
                                                     setExpoToDelete(expo._id || expo.id)
                                                 }}>
-                                                    <img src={smile} alt="botón bote de basura para eliminar el item" />
+                                                    <img src={smile} alt="botón bote de basura para eliminar el item" loading="lazy" />
                                                 </button>
                                             </div>
 

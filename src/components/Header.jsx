@@ -65,7 +65,7 @@ export function Header() {
                                                     <div className="w-24 rounded-full">
                                                         {
                                                             userData?.online
-                                                                ? <img src={userData.profileImage} alt="Foto de Mélani Vera" className="w-full h-full object-cover" />
+                                                                ? <img src={userData.profileImage} alt="Foto de Mélani Vera" className="w-full h-full object-cover" loading="lazy" />
                                                                 : 'no hay foto'
                                                         }
                                                     </div>
@@ -109,7 +109,7 @@ export function Header() {
                         <li key='modal'>
                             <button className="" onMouseOver={() => document.getElementById('my_modal_1').showModal()}>
                                 <NavLink to="/signin" className='hover:scale-[.8] hover:rotate-[360deg] hover:[transition:.5s]'  >
-                                    <img src={icon} alt="" className="w-12 [transition:.5s]" />
+                                    <img src={icon} alt="" className="w-12 [transition:.5s]" loading="lazy" />
                                 </NavLink>
                             </button>
                             <dialog id="my_modal_1" className="modal text-black">
@@ -124,7 +124,7 @@ export function Header() {
                                                         <div className="w-24 rounded-full">
                                                             {
                                                                 userData?.online
-                                                                    ? <img src={userData.profileImage} alt="Foto de Mélani Vera" className="w-full h-full object-cover" />
+                                                                    ? <img src={userData.profileImage} alt="Foto de Mélani Vera" className="w-full h-full object-cover" loading="lazy" />
                                                                     : 'no hay foto'
                                                             }
                                                         </div>

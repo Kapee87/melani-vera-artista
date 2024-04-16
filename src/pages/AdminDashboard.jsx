@@ -138,13 +138,13 @@ function AdminDashboard() {
             imageRender ?
               <div className="avatar">
                 <div className="w-24 rounded-full">
-                  <img src={imageRender} alt={imageRender ? 'imgrender' : 'profile'} className='w-full h-full object-cover' />
+                  <img src={imageRender} alt={imageRender ? 'imgrender' : 'profile'} className='w-full h-full object-cover' loading="lazy" />
                 </div>
               </div>
               :
               <div className="avatar">
                 <div className="w-24 rounded-full">
-                  <img src={userDetails?.profileImage} alt={imageRender ? 'imgrender' : 'profile'} className='w-full h-full object-cover' />
+                  <img src={userDetails?.profileImage} alt={imageRender ? 'imgrender' : 'profile'} className='w-full h-full object-cover' loading="lazy" />
                 </div>
               </div>
           }

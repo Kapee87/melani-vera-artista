@@ -31,11 +31,11 @@ export function Layout() {
                     }
                 </h2>
                 <img src={deco1} alt="Decorador de layout" className="fixed z-10 top-0 hidden
-                md:grid md:w-[28rem] md:h-[22rem]  md:-top-[3rem] md:-left-[5rem]" />
+                md:grid md:w-[28rem] md:h-[22rem]  md:-top-[3rem] md:-left-[5rem]" loading="lazy" />
                 <div className="z-20 max-w-full">
                     <Outlet />
                 </div>
-                <img src={deco4} alt="Decorador de layout" className="fixed bottom-0 right-0 z-10" />
+                <img src={deco4} alt="Decorador de layout" className="fixed bottom-0 right-0 z-10" loading="lazy" />
             </main>
             <WapBtn />
         </>

@@ -9,7 +9,7 @@ function WapBtn() {
             >
                 <span className='text-green-400 opacity-80 font-bold text-sm lg:hidden group-hover:flex'> Comunicate por whatsapp </span>
                 <a href="https://wa.link/5fopiz" target='_blank' className='h-12 w-12 lg:h-16 lg:w-16 avatar group-hover:scale-110' >
-                    <img src={wapIcon} alt="Logo de whatsapp" />
+                    <img src={wapIcon} alt="Logo de whatsapp" loading="lazy" />
                 </a>
             </div>
         </aside>

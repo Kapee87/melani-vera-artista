@@ -33,7 +33,7 @@ export function SobreMi() {
                         <div className="avatar flex flex-col md:flex-row items-center gap-4 caveat md:self-end">
                             <h2 className="text-4xl drop-shadow-lg "> {profileInfo.name} </h2>
                             <div className="w-32 md:w-40 mask mask-circle">
-                                <img src={profileInfo.profileImage || "www.foto.com/expo1"} alt="" />
+                                <img src={profileInfo.profileImage || "www.foto.com/expo1"} alt="" loading="lazy" />
                             </div>
                         </div>
                         <div className="caveat text-2xl flex flex-col gap-2">

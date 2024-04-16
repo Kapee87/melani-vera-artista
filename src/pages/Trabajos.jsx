@@ -99,7 +99,7 @@ export function Trabajos() {
                                             return (
                                                 <li key={image._id} className='lg:[&_span]:hover:flex lg:[&_span]:hover:transition-all lg:max-w-64'>
                                                     <Link to={image.imageUrl} target='_blank' >
-                                                        <img src={image.imageUrl.length > 0 ? image.imageUrl : imgDefault} alt="" id={`workImage${image._id}`} />
+                                                        <img src={image.imageUrl.length > 0 ? image.imageUrl : imgDefault} alt="" id={`workImage${image._id}`} loading="lazy" />
                                                     </Link>
                                                     {
                                                         userData &&
@@ -107,7 +107,7 @@ export function Trabajos() {
                                                             setShowModal(true)
                                                             setImgUrlToDelete(image.imageUrl)
                                                         }}>
-                                                            <img src={smile} alt="botón bote de basura para eliminar el item" />
+                                                            <img src={smile} alt="botón bote de basura para eliminar el item" loading="lazy" />
                                                         </button>
 
                                                     }

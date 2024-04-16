@@ -54,7 +54,7 @@ function ExpoDetails() {
 
                         </div>
                         <div className='flex flex-col items-center gap-3'>
-                            <img src={expoDetail.image} alt={expoDetail.name} onError={event => event.target.src = imgDefault} className='rounded-md' />
+                            <img src={expoDetail.image} alt={expoDetail.name} onError={event => event.target.src = imgDefault} className='rounded-md' loading="lazy" />
                             <p className='md:w-4/5 text-xl md:text-3xl text-pretty'>
                                 {expoDetail.info}
                             </p>
