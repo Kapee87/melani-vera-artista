@@ -1,8 +1,7 @@
 {
-    "nombre": "Mélani Vera",
-    "datos1": "",
-    "datos2": "",
-    "urlPerfil": "https://scontent.faep14-2.fna.fbcdn.net/v/t39.30808-6/345865600_1270293186902897_198788907389616327_n.jpg?stp=dst-jpg_s206x206&_nc_cat=110&ccb=1-7&_nc_sid=da31f3&_nc_eui2=AeEorbtZC6dkzCIPCC0zRcG0bS1PAkPTeqptLU8CQ9N6qr4sq2eDVn_afXDk3d8GO5k&_nc_ohc=gPVxN5a0LWcAX9JQIKy&_nc_ht=scontent.faep14-2.fna&oh=00_AfCuE9r1Sn8jpheEb8KgrnIPIqt1ScK5q0kC691iChR87A&oe=648CCCE3",
+    "name": "Mélani Vera",
+    "profileImg": "./assets/imgDefault.jpg",
+    "info": "Soy una artista plástica nacida y residente de la localidad balnearia de Las Toninas. Mi obra se centra en las temáticas clásicas que pulsan entre la filosofía y el arte; la belleza, el misterio, la naturaleza, el dolor. Así como también la reivindicación de la diversidad cultural y las desigualdades sociales. Trabajo desde el realismo con preferencia hacia la técnica del óleo y la carbonilla. Actualmente realizo exposiciones individuales y colectivas a nivel regional y comisiones que van desde el retrato hasta el muralismo.",
     "redesSocialesUrl": [
         {
             "red": "Facebook",

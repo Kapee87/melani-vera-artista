@@ -89,5 +89,5 @@ export function useUserHandler() {
     }
 
 
-    return { updateUser }
+    return { updateUser, getUserInfo }
 }
