@@ -4,6 +4,7 @@ import deco1 from '../assets/decorator1.png'
 import deco4 from '../assets/deco4.png'
 import { usePath } from "../hooks/usePath";
 import { useEffect } from "react";
+import WapBtn from "./microcomponents/WapBtn";
 
 
 export function Layout() {
@@ -37,6 +38,7 @@ export function Layout() {
                 </div>
                 <img src={deco4} alt="Decorador de layout" className="fixed bottom-0 right-0 z-10" />
             </main>
+            <WapBtn />
         </>
     )
 }
