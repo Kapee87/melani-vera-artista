@@ -6,7 +6,7 @@ import instaSvg from '../assets/instagramIcon.svg'
 import mailSvg from '../assets/mail.svg'
 
 
-export function SobreMi() {
+export default function SobreMi() {
     const [profileInfo, setProfileInfo] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 

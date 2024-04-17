@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useExpoHandler } from '../../hooks/useExpoHandler';
 import Toastify from 'toastify-js';
 import { uploadFile } from '../../components/firebase/config';
-import imgDefault from '../../assets/imgDefault.jpg';
+import imgDefault from '../../assets/imgDefault.avif';
 
 function NewExpo() {
     const { postNewExpo } = useExpoHandler();

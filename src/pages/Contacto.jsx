@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
-export function Contacto() {
+export default function Contacto() {
     const [formAlert, setFormAlert] = useState({
         "show": false,
         "success": false,

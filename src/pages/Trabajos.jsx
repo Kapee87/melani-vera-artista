@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { useContext, useEffect, useState, } from 'react'
 import DeleteModal from '../components/microcomponents/DeletModal'
 import smile from '../assets/smile.avif'
-import imgDefault from '../assets/imgDefault.jpg'
+import imgDefault from '../assets/imgDefault.avif'
 import Toastify from 'toastify-js'
 import '../style/Trabajos.css'
 import { UserContext } from '../context/UserContextB'
@@ -11,7 +11,7 @@ import Loader from '../components/microcomponents/Loader'
 
 
 
-export function Trabajos() {
+export default function Trabajos() {
     const [isLoading, setIsLoading] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])

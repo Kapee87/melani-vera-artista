@@ -1,5 +1,5 @@
 import '../style/Expos.css'
-import imgDefault from '../assets/imgDefault.jpg'
+import imgDefault from '../assets/imgDefault.avif'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContextB'
 import { NavLink } from 'react-router-dom'

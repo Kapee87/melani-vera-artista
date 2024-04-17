@@ -1,23 +1,22 @@
-import { Suspense, useContext, useEffect } from 'react'
+import { Suspense, lazy, useContext, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Contacto } from '../pages/Contacto.jsx'
-import { Expos } from '../pages/Expos.jsx'
-import SignIn from '../pages/SignIn.jsx'
-import { SobreMi } from '../pages/SobreMi.jsx'
-import { Trabajos } from '../pages/Trabajos.jsx'
 import { Layout } from '../components/Layout.jsx'
-import axios from 'axios'
-import AdminDashboard from '../pages/AdminDashboard.jsx'
-import NewWork from '../pages/new entries forms/NewWork.jsx'
-import NewExpo from '../pages/new entries forms/NewExpo.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
-import ProtectedRoute from './ProtectedRoute.jsx'
 import { urlToken } from '../utils/urlStore.js'
-import ExpoDetails from '../pages/ExpoDetails.jsx'
-
-
+import axios from 'axios'
 
 export default function Router() {
+    const ExpoDetails = lazy(() => import('../pages/ExpoDetails.jsx'))
+    const NewWork = lazy(() => import('../pages/new entries forms/NewWork.jsx'))
+    const NewExpo = lazy(() => import('../pages/new entries forms/NewExpo.jsx'))
+    const AdminDashboard = lazy(() => import('../pages/AdminDashboard.jsx'))
+    const SignIn = lazy(() => import('../pages/SignIn.jsx'))
+    const ProtectedRoute = lazy(() => import('./ProtectedRoute.jsx'))
+    const Trabajos = lazy(() => import('../pages/Trabajos.jsx'))
+    const Contacto = lazy(() => import('../pages/Contacto.jsx'))
+    const SobreMi = lazy(() => import('../pages/SobreMi.jsx'))
+    const Expos = lazy(() => import('../pages/Expos.jsx'))
+
     const { userData, setUserData } = useContext(UserContext)
     const token = sessionStorage.getItem('token')
 
