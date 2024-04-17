@@ -9,12 +9,6 @@ import WapBtn from "./microcomponents/WapBtn";
 export function Layout() {
     const { title } = usePath()
 
-    /* util para debugging del ruteo
-    useEffect(() => {
-        console.log(title);
-    }, [title]) 
-    */
-
     return (
         <>
             <Header />

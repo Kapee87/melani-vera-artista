@@ -17,7 +17,7 @@ export default function Router() {
     const SobreMi = lazy(() => import('../pages/SobreMi.jsx'))
     const Expos = lazy(() => import('../pages/Expos.jsx'))
 
-    const { userData, setUserData } = useContext(UserContext)
+    const { setUserData } = useContext(UserContext)
     const token = sessionStorage.getItem('token')
 
     useEffect(() => {

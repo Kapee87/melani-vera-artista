@@ -16,8 +16,8 @@ export default function Trabajos() {
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])
     const [imgUrlToDelete, setImgUrlToDelete] = useState(null)
-    const { userData, setUserData } = useContext(UserContext)
-    const { deleteWork, deleteImgFirebase } = useWorkHandler()
+    const { userData } = useContext(UserContext)
+    const { deleteWork } = useWorkHandler()
 
     useEffect(() => {
         setIsLoading(true)
@@ -37,7 +37,6 @@ export default function Trabajos() {
 
     const handleDeleteWork = async () => {
         const workId = imgs.find(el => el.imageUrl == imgUrlToDelete)._id
-        console.log(workId);
         try {
             const workFound = await deleteWork(imgUrlToDelete, workId)
             if (workFound) {

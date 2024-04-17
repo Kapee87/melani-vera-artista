@@ -30,10 +30,7 @@ export async function uploadFile(file, folder) {
   return url;
 }
 export async function getStorageRefFromUrl(url) {
-
-
   const imageRef = ref(storage, url);
-
   try {
     // Verificar si la referencia existe
     const metadata = await getMetadata(imageRef);
@@ -46,24 +43,10 @@ export async function getStorageRefFromUrl(url) {
   }
 }
 export async function deleteFile(urlsToDelete) {
-
   try {
     const res = await deleteObject(urlsToDelete)
     console.log(res);
   } catch (error) {
     console.log(error);
   }
-
-  /* urlsToDelete.forEach(async (file) => {
-    const fileRef = ref(storage, file)
-    const fileName = fileRef.name
-    try {
-      const res = await deleteObject(fileRef)
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-    console.log(fileRef);
-  }); */
-
 }
