@@ -1,5 +1,5 @@
 import React from 'react'
-import wapIcon from '../../assets/wapIcon.png'
+import wapIcon from '../../assets/wapIcon.avif'
 
 function WapBtn() {
     return (

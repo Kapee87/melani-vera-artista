@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useContext, useEffect, useState, } from 'react'
 import DeleteModal from '../components/microcomponents/DeletModal'
-import smile from '../assets/smile.png'
+import smile from '../assets/smile.avif'
 import imgDefault from '../assets/imgDefault.jpg'
 import Toastify from 'toastify-js'
 import '../style/Trabajos.css'

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Header } from "./Header"
-import deco1 from '../assets/decorator1.png'
-import deco4 from '../assets/deco4.png'
+import deco1 from '../assets/decorator1.avif'
+import deco4 from '../assets/deco4.avif'
 import { usePath } from "../hooks/usePath";
 import WapBtn from "./microcomponents/WapBtn";
 

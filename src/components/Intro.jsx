@@ -1,6 +1,6 @@
 import '../style/Intro.css'
-import deco2 from '../assets/deco2.png'
-import deco3 from '../assets/deco3.png'
+import deco2 from '../assets/deco2.avif'
+import deco3 from '../assets/deco3.avif'
 
 export function Intro() {
     // const [landingSt, setLanding] = useState(landing.current)

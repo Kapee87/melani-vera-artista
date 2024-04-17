@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContextB'
 import { NavLink } from 'react-router-dom'
 import Loader from '../components/microcomponents/Loader'
 import DeleteModal from '../components/microcomponents/DeletModal'
-import smile from '../assets/smile.png'
+import smile from '../assets/smile.avif'
 import { useExpoHandler } from '../hooks/useExpoHandler'
 import Toastify from 'toastify-js'
 
