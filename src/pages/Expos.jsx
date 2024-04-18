@@ -9,7 +9,7 @@ import smile from '../assets/smile.avif'
 import { useExpoHandler } from '../hooks/useExpoHandler'
 import Toastify from 'toastify-js'
 
-export function Expos() {
+export default function Expos() {
     const [expoFetch, setExpoFetch] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const { userData, setUserData } = useContext(UserContext)
