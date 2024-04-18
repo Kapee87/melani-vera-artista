@@ -1,9 +1,11 @@
 import { Suspense, lazy, useContext, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from '../components/Layout.jsx'
+import Trabajos from '../pages/Trabajos.jsx'
 import { UserContext } from '../context/UserContextB.jsx'
 import { urlToken } from '../utils/urlStore.js'
 import axios from 'axios'
+import MainLoader from '../components/MainLoader.jsx'
 
 export default function Router() {
     const ExpoDetails = lazy(() => import('../pages/ExpoDetails.jsx'))
@@ -12,7 +14,6 @@ export default function Router() {
     const AdminDashboard = lazy(() => import('../pages/AdminDashboard.jsx'))
     const SignIn = lazy(() => import('../pages/SignIn.jsx'))
     const ProtectedRoute = lazy(() => import('./ProtectedRoute.jsx'))
-    const Trabajos = lazy(() => import('../pages/Trabajos.jsx'))
     const Contacto = lazy(() => import('../pages/Contacto.jsx'))
     const SobreMi = lazy(() => import('../pages/SobreMi.jsx'))
     const Expos = lazy(() => import('../pages/Expos.jsx'))
@@ -43,7 +44,7 @@ export default function Router() {
     }, [])
 
     return (
-        <Suspense fallback={<h3>Cargando...</h3>}>
+        <Suspense fallback={<MainLoader />}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Layout />}>
