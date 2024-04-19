@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import imgDefault from '../assets/imgDefault.avif'
-import Loader from '../components/microcomponents/Loader';
+import Loader from '../components/microcomponents/Loader.jsx';
 
 function ExpoDetails() {
     const { search } = useLocation()

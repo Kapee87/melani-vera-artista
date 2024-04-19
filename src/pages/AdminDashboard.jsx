@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useRef, useState } from 'react'
-import { urlUser } from '../utils/urlStore'
-import { useUserHandler } from "../hooks/useUserHandler"
+import { urlUser } from '../utils/urlStore.js'
+import { useUserHandler } from "../hooks/useUserHandler.js"
 
 
 function AdminDashboard() {

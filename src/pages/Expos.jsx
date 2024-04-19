@@ -1,12 +1,12 @@
 import '../style/Expos.css'
 import imgDefault from '../assets/imgDefault.avif'
 import { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../context/UserContextB'
+import { UserContext } from '../context/UserContextB.jsx'
 import { NavLink } from 'react-router-dom'
-import Loader from '../components/microcomponents/Loader'
-import DeleteModal from '../components/microcomponents/DeletModal'
+import Loader from '../components/microcomponents/Loader.jsx'
+import DeleteModal from '../components/microcomponents/DeletModal.jsx'
 import smile from '../assets/smile.avif'
-import { useExpoHandler } from '../hooks/useExpoHandler'
+import { useExpoHandler } from '../hooks/useExpoHandler.js'
 import Toastify from 'toastify-js'
 
 export default function Expos() {

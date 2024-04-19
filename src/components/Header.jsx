@@ -3,7 +3,7 @@ import icon from '../assets/sessionIcon.avif'
 import { useScroll } from "../hooks/useScroll";
 
 import { useContext } from "react";
-import { UserContext } from "../context/UserContextB";
+import { UserContext } from "../context/UserContextB.jsx";
 
 
 export function Header() {

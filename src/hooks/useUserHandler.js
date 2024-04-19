@@ -1,10 +1,10 @@
 import axios from "axios"
 import { useContext, useEffect } from "react";
-import { UserContext } from "../context/UserContextB";
+import { UserContext } from "../context/UserContextB.jsx";
 import Toastify from 'toastify-js'
 import { useNavigate } from "react-router-dom";
-import { deleteFile, getStorageRefFromUrl, uploadFile } from "../components/firebase/config";
-import { urlUser } from "../utils/urlStore";
+import { deleteFile, getStorageRefFromUrl, uploadFile } from "../components/firebase/config.js";
+import { urlUser } from "../utils/urlStore.js";
 
 export function useUserHandler() {
     const navigate = useNavigate()

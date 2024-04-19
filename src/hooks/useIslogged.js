@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { UserContext } from "../context/UserContextB"
+import { UserContext } from "../context/UserContextB.jsx"
 import toastify from "toastify-js"
 
 export function useIsLogged() {
     const { token } = useContext(UserContext)
     const navigate = useNavigate()
     const isLogged = () => {
-        
+
         if (!token && !sessionStorage.getItem('token')) {
             toastify({
                 text: `Por favor, iniciar sesión para ingresar a esta sección`,

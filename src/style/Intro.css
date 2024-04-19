@@ -31,11 +31,11 @@
 
 .introContainer h1 {
     font-family: 'Caveat';
-    font-size: 4em;
+    font-size: 4rem;
 }
 
 .introContainer h4 {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 .introContainer h1,
@@ -47,12 +47,12 @@
 .introContainer p::after {
     font-size: .8rem;
     font-family: 'Courier New', Courier, monospace;
-    content: '';
     position: absolute;
     bottom: 2rem;
     left: 50vw;
     opacity: .6;
     animation: countdown 5s;
+    content: 'Ingresando... ';
 }
 
 @keyframes landing {
@@ -109,7 +109,6 @@
     100% {
         content: 'Ingresando en 1s..';
     }
-
 }
 
 @media screen and (max-width:540px) {

@@ -3,9 +3,9 @@ import '../style/signin.css'
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import Toastify from 'toastify-js'
-import { UserContext } from "../context/UserContextB"
-import { urlSignIn } from "../utils/urlStore"
-import Loader from "../components/microcomponents/Loader"
+import { UserContext } from "../context/UserContextB.jsx"
+import { urlSignIn } from "../utils/urlStore.js"
+import Loader from "../components/microcomponents/Loader.jsx"
 
 
 function SignIn() {

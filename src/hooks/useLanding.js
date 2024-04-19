@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { UserContext } from "../context/UserContextB"
+import { UserContext } from "../context/UserContextB.jsx"
 
 export function useLanding() {
     const isLanding = sessionStorage.getItem('landing') ? false : true

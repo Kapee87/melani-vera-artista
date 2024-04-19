@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Loader from "../components/microcomponents/Loader"
-import MediaBtn from "../components/microcomponents/MediaBtn"
+import Loader from "../components/microcomponents/Loader.jsx"
+import MediaBtn from "../components/microcomponents/MediaBtn.jsx"
 import facebookSvg from '../assets/facebookIcon.svg'
 import instaSvg from '../assets/instagramIcon.svg'
 import mailSvg from '../assets/mail.svg'

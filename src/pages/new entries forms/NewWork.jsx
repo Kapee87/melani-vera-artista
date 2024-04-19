@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { useWorkHandler } from '../../hooks/useWorkHandler'
+import { useWorkHandler } from '../../hooks/useWorkHandler.js'
 import Toastify from 'toastify-js'
-import { uploadFile } from '../../components/firebase/config'
+import { uploadFile } from '../../components/firebase/config.js'
 
 function NewWork() {
   const [imageRender, setImageRender] = useState(null)

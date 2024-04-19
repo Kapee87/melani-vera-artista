@@ -7,17 +7,17 @@ import { urlToken } from '../utils/urlStore.js'
 import axios from 'axios'
 import MainLoader from '../components/MainLoader.jsx'
 
-export default function Router() {
-    const ExpoDetails = lazy(() => import('../pages/ExpoDetails.jsx'))
-    const NewWork = lazy(() => import('../pages/new entries forms/NewWork.jsx'))
-    const NewExpo = lazy(() => import('../pages/new entries forms/NewExpo.jsx'))
-    const AdminDashboard = lazy(() => import('../pages/AdminDashboard.jsx'))
-    const SignIn = lazy(() => import('../pages/SignIn.jsx'))
-    const ProtectedRoute = lazy(() => import('./ProtectedRoute.jsx'))
-    const Contacto = lazy(() => import('../pages/Contacto.jsx'))
-    const SobreMi = lazy(() => import('../pages/SobreMi.jsx'))
-    const Expos = lazy(() => import('../pages/Expos.jsx'))
+const ExpoDetails = lazy(() => import('../pages/ExpoDetails.jsx'))
+const NewWork = lazy(() => import('../pages/new entries forms/NewWork.jsx'))
+const NewExpo = lazy(() => import('../pages/new entries forms/NewExpo.jsx'))
+const AdminDashboard = lazy(() => import('../pages/AdminDashboard.jsx'))
+const SignIn = lazy(() => import('../pages/SignIn.jsx'))
+const ProtectedRoute = lazy(() => import('./ProtectedRoute.jsx'))
+const Contacto = lazy(() => import('../pages/Contacto.jsx'))
+const SobreMi = lazy(() => import('../pages/SobreMi.jsx'))
+const Expos = lazy(() => import('../pages/Expos.jsx'))
 
+function Router() {
     const { setUserData } = useContext(UserContext)
     const token = sessionStorage.getItem('token')
 
@@ -44,8 +44,8 @@ export default function Router() {
     }, [])
 
     return (
-        <Suspense fallback={<MainLoader />}>
-            <BrowserRouter>
+        <BrowserRouter>
+            <Suspense fallback={<MainLoader />}>
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         **<Route index element={<Trabajos />} />**
@@ -60,9 +60,10 @@ export default function Router() {
                     </Route>
                     <Route path='/signin' element={<SignIn />} />
                 </Routes>
-            </BrowserRouter>
-        </Suspense >
+            </Suspense >
+        </BrowserRouter>
     )
 }
 
 
+export default Router
