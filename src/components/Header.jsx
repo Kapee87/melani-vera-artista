@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import icon from '../assets/sessionIcon.avif'
+import icon from '../assets/sessionIcon.webp'
 import { useScroll } from "../hooks/useScroll";
 
 import { useContext } from "react";

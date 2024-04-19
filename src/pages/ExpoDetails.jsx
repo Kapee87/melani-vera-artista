@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import imgDefault from '../assets/imgDefault.avif'
+import imgDefault from '../assets/imgDefault.webp'
 import Loader from '../components/microcomponents/Loader.jsx';
 
 function ExpoDetails() {

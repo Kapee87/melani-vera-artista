@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "./Header.jsx";
 import { usePath } from "../hooks/usePath.js";
-import deco1 from "../assets/decorator1.avif";
-import deco4 from "../assets/deco4.avif";
+import deco1 from "../assets/decorator1.webp";
+import deco4 from "../assets/deco4.webp";
 import WapBtn from "./microcomponents/WapBtn.jsx";
 
 export function Layout() {
